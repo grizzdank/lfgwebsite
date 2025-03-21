@@ -1,24 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LFG Consulting Website
+
+Modern website for LFG Consulting built with Next.js and WordPress as a headless CMS.
+
+## Tech Stack
+
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- WordPress REST API
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd lfgwebsite
+```
 
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env.local` file in the root directory with your WordPress API URL:
+```bash
+NEXT_PUBLIC_WORDPRESS_API_URL=https://your-wordpress-site.com/wp-json
+```
+
+4. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This site is deployed on Vercel. Any push to the main branch will trigger a new deployment.
+
+## WordPress Integration
+
+The site uses WordPress as a headless CMS. Content is fetched from the WordPress REST API and rendered using Next.js components.
 
 ## Learn More
 
