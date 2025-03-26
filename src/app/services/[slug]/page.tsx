@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { services, type Service } from '@/app/page';
+import { services, type Service } from '@/data/services';
 
 const pricingTiers = {
   'organizational-change-management-ocm': [
