@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "LFG Consulting - Project Management & AI Consulting Services",
-  description: "LFG Consulting delivers outstanding results in project management, change management, process improvement, and AI consulting.",
+  description: "Empowering organizations to thrive through expert change management, AI-driven workflow optimization, and rapid solution development.",
   keywords: "project management, change management, process improvement, AI consulting, business consulting",
   icons: {
     icon: [
