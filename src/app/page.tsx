@@ -4,21 +4,27 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import About from '@/components/sections/About';
 
-const services = [
+export interface Service {
+  title: string;
+  description: string;
+  image: string;
+}
+
+export const services: Service[] = [
   {
-    title: 'Project and Change Management',
-    description: 'Expert guidance in managing complex projects and organizational change initiatives. We help you navigate transitions smoothly while maintaining operational excellence.',
-    image: '/images/services/project-management.jpg'
+    title: 'Organizational Change Management (OCM)',
+    description: 'We help teams confidently navigate change, ensuring new tools, systems, and processes stick. Our seasoned OCM experts deliver customized strategies, training, and support to drive adoption, engagement, and sustainable success.',
+    image: '/images/services/ocm.png'
   },
   {
-    title: 'Process Improvement',
-    description: 'Streamline your operations and enhance efficiency through data-driven process analysis and optimization strategies.',
-    image: '/images/services/process-improvement.jpg'
+    title: 'AI Workflow Integration',
+    description: 'Transform your business operations by embedding cutting-edge Generative AI (GenAI), intelligent agents, and advanced automation into your workflows. We streamline processes, enhance efficiency, and empower your teams to leverage AI effectively for lasting productivity gains.',
+    image: '/images/services/ai-workflow.jpg'
   },
   {
-    title: 'AI Consulting',
-    description: 'Navigate the future of business with our AI consulting services. We help you identify and implement AI solutions that drive innovation and growth.',
-    image: '/images/services/ai-consulting.jpg'
+    title: 'Rapid MVP Development',
+    description: 'Fast-track your ideas from concept to market-ready MVPs. Leveraging AI-powered prototyping methods, we rapidly deliver scalable solutions that help you validate ideas, capture opportunities, and stay ahead of competitors.',
+    image: '/images/services/mvp.png'
   }
 ];
 
@@ -47,7 +53,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Let Us Help You Find Your Path
+            Navigate Change. Embrace AI. Build Fast.
           </motion.h1>
           <motion.p
             className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-white/80"
@@ -55,8 +61,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            We deliver outstanding results in project management, change management,
-            process improvement, and AI consulting.
+            Empowering organizations to thrive through expert change management, AI-driven workflow optimization, and rapid solution development.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -88,7 +93,7 @@ export default function Home() {
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
-                className="bg-[#f3f7f5] rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow border border-[#e8eeeb]"
+                className="bg-[#f3f7f5] rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#e8eeeb] group relative overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -100,6 +105,7 @@ export default function Home() {
                     alt={service.title}
                     fill
                     style={{ objectFit: 'cover' }}
+                    className="transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-[#2c4a3c]">{service.title}</h3>

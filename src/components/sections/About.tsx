@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const team = [
   {
-    name: 'Sue Weinberger, PMP, LSSBB',
+    name: 'Sue Weinberger, PMP®, LSSBB, Prosci Certified',
     title: 'Founder, Co-Owner, Principal Consultant',
     image: '/sues-headshot.jpeg',
     bio: 'With over 15 years of extensive experience across diverse industries, I specialize in project management, change management, and business strategy. My expertise encompasses the successful execution of complex projects, guiding organizations through transformative change initiatives, and developing strategic roadmaps that drive business growth and operational efficiency.',

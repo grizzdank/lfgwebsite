@@ -9,6 +9,16 @@ export const wp = axios.create({
   },
 });
 
+// Content Types
+export interface ContactFormData {
+  name: string;
+  email: string;
+  company?: string;
+  service: string;
+  message: string;
+}
+
+// Core WordPress Endpoints
 export async function getPages() {
   try {
     const response = await wp.get('/wp/v2/pages');
@@ -56,5 +66,30 @@ export async function getMedia(id: number) {
   } catch (error) {
     console.error(`Error fetching media ${id}:`, error);
     return null;
+  }
+}
+
+// Contact Form 7 Endpoint
+export async function submitContactForm(formData: ContactFormData) {
+  try {
+    const response = await wp.post(
+      `/contact-form-7/v1/contact-forms/${process.env.CONTACT_FORM_ID}/feedback`,
+      {
+        'your-name': formData.name,
+        'your-email': formData.email,
+        'your-company': formData.company,
+        'your-service': formData.service,
+        'your-message': formData.message,
+      }
+    );
+    
+    if (response.status !== 200) {
+      throw new Error(response.data.message || 'Failed to submit form');
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error('Error submitting form:', error);
+    throw error;
   }
 } 

@@ -9,6 +9,32 @@ export const metadata: Metadata = {
   title: "LFG Consulting - Project Management & AI Consulting Services",
   description: "LFG Consulting delivers outstanding results in project management, change management, process improvement, and AI consulting.",
   keywords: "project management, change management, process improvement, AI consulting, business consulting",
+  icons: {
+    icon: [
+      {
+        url: '/images/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+      {
+        url: '/images/favicon-16x16.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        url: '/images/favicon-32x32.png',
+        sizes: '32x32',
+        type: 'image/png',
+      }
+    ],
+    apple: [
+      {
+        url: '/images/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

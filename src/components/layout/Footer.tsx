@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -14,9 +15,18 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-xl font-bold mb-4 text-white">LFG Consulting</h3>
+            <div className="flex items-center mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="LFG Consulting Logo"
+                width={50}
+                height={50}
+                className="mr-3"
+              />
+              <h3 className="text-xl font-bold text-white">LFG Consulting</h3>
+            </div>
             <p className="text-[#e8eeeb] mb-4 max-w-md">
-              Empowering businesses through strategic project management, process improvement, and AI consulting solutions.
+              Empowering organizations to thrive through expert change management, AI-driven workflow optimization, and rapid solution development.
             </p>
           </motion.div>
 
@@ -30,16 +40,21 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4 text-white">Contact Us</h3>
             <div className="space-y-2 text-[#e8eeeb]">
               <p>
-                <a href="tel:+1234567890" className="hover:text-[#c17f59] transition-colors">
-                  (123) 456-7890
+                <a href="/contact" className="hover:text-[#c17f59] transition-colors">
+                  Send us a message
                 </a>
               </p>
               <p>
-                <a href="mailto:info@lfgconsultants.com" className="hover:text-[#c17f59] transition-colors">
-                  info@lfgconsultants.com
+                <a href="tel:+19199359482" className="hover:text-[#c17f59] transition-colors">
+                  (919) 935-9482
                 </a>
               </p>
-              <p>Boston, MA</p>
+              <p>
+                <a href="mailto:dave@lfgconsultants.com" className="hover:text-[#c17f59] transition-colors">
+                  dave@lfgconsultants.com
+                </a>
+              </p>
+              <p>Portland, OR</p>
             </div>
           </motion.div>
         </div>

@@ -1,5 +1,7 @@
 # LFG Consulting Website
 
+© 2025 LFG Consulting. All Rights Reserved
+
 Modern website for LFG Consulting built with Next.js and WordPress as a headless CMS.
 
 ## Tech Stack
