@@ -40,15 +40,16 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4 text-white">Contact Us</h3>
             <div className="space-y-2 text-[#e8eeeb]">
               <p>
-                <a href="/contact" className="hover:text-[#c17f59] transition-colors">
+                <a href="/contact" className="text-[#dca47d] hover:text-[#c17f59] transition-colors">
                   Send us a message
                 </a>
               </p>
+              {/*}
               <p>
                 <a href="tel:+19199359482" className="hover:text-[#c17f59] transition-colors">
                   (919) 935-9482
                 </a>
-              </p>
+              </p> */}
               <p>
                 <a href="mailto:dave@lfgconsultants.com" className="hover:text-[#c17f59] transition-colors">
                   dave@lfgconsultants.com
