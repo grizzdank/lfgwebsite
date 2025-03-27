@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
+    "@vercel/analytics": "^1.5.0",
     "@wordpress/api-fetch": "^7.20.0",
     "axios": "^1.8.4",
     "framer-motion": "^12.5.0",
