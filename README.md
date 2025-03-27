@@ -2,7 +2,7 @@
 
 © 2025 LFG Consulting. All Rights Reserved
 
-Modern website for LFG Consulting built with Next.js and WordPress as a headless CMS.
+Modern website for LFG Consulting built with Next.js, featuring a responsive design and seamless contact form integration.
 
 ## Tech Stack
 
@@ -10,7 +10,7 @@ Modern website for LFG Consulting built with Next.js and WordPress as a headless
 - TypeScript
 - Tailwind CSS
 - Framer Motion
-- WordPress REST API
+- Formspree (Contact Form)
 
 ## Getting Started
 
@@ -25,9 +25,10 @@ cd lfgwebsite
 npm install
 ```
 
-3. Create a `.env.local` file in the root directory with your WordPress API URL:
+3. Create a `.env.local` file in the root directory with your environment variables:
 ```bash
-NEXT_PUBLIC_WORDPRESS_API_URL=https://your-wordpress-site.com/wp-json
+NEXT_PUBLIC_SITE_URL=https://lfgconsultants.com
+NEXT_PUBLIC_FORMSPREE_PROJECT_ID=your_formspree_id
 ```
 
 4. Run the development server:
@@ -37,13 +38,37 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Project Structure
+
+```
+src/
+├── app/           # Pages and routes
+├── components/    # React components
+│   ├── layout/   # Layout components (Header, Footer)
+│   ├── sections/ # Page sections (About)
+│   └── seo/      # SEO components
+├── config/       # Configuration files
+└── data/        # Static data files
+```
+
 ## Deployment
 
-This site is deployed on Vercel. Any push to the main branch will trigger a new deployment.
+This site is deployed on Vercel's Hobby plan. Any push to the main branch will trigger a new deployment.
 
-## WordPress Integration
+Features:
+- Automatic HTTPS
+- Global CDN
+- Automatic deployments on push
+- Preview deployments for pull requests
+- Analytics and monitoring
 
-The site uses WordPress as a headless CMS. Content is fetched from the WordPress REST API and rendered using Next.js components.
+## Contact Form
+
+The site uses Formspree for handling contact form submissions. The form is configured with:
+- Custom validation
+- Spam protection
+- Email notifications
+- GDPR compliance
 
 ## Learn More
 
