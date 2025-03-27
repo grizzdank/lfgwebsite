@@ -1,14 +1,16 @@
 'use client';
 
-type JsonLdData = {
-  "@context": string;
-  "@type": string;
+type JsonLdObject = {
+  "@type"?: string;
+  "@context"?: string;
   "@id"?: string;
-  [key: string]: string | number | boolean | JsonLdData | Array<string | JsonLdData> | undefined;
+  [key: string]: JsonLdValue | undefined;
 };
 
+type JsonLdValue = string | number | boolean | JsonLdObject | Array<JsonLdValue> | undefined;
+
 type JsonLdProps = {
-  data: JsonLdData;
+  data: JsonLdObject;
 };
 
 export default function JsonLd({ data }: JsonLdProps) {
