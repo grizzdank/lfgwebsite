@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Analytics } from "@vercel/analytics/react";
 import Header from './Header';
 import Footer from './Footer';
+import SchemaOrg from '../seo/SchemaOrg';
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ interface ClientLayoutProps {
 export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <>
+      <SchemaOrg />
       <Header />
       <AnimatePresence mode="wait">
         <motion.main
