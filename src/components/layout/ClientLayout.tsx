@@ -1,16 +1,17 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import { Analytics } from "@vercel/analytics/react";
 import Header from './Header';
 import Footer from './Footer';
 
-interface LayoutProps {
+interface ClientLayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <>
       <Header />
       <AnimatePresence mode="wait">
         <motion.main
@@ -24,6 +25,7 @@ export default function Layout({ children }: LayoutProps) {
         </motion.main>
       </AnimatePresence>
       <Footer />
-    </div>
+      <Analytics />
+    </>
   );
 } 
