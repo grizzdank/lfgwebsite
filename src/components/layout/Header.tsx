@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const menuItems = [
   { name: 'Home', href: '/' },
@@ -15,6 +16,8 @@ const menuItems = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isContactPage = pathname === '/contact';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +50,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`${
-                  isScrolled ? 'text-[#385449]' : 'text-white'
+                  isScrolled || isContactPage ? 'text-[#385449]' : 'text-white'
                 } hover:text-[#c17f59] transition-colors`}
               >
                 {item.name}
