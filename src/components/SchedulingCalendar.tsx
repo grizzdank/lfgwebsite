@@ -38,7 +38,6 @@ export default function SchedulingCalendar({ calLink = 'dave-graham-xhc6rb/disco
           calLink={calLink}
           style={{ width: '100%', height: '100%', minHeight: '550px' }}
           config={{
-            'name': 'LFG Consulting',
             'theme': 'light',
             'hideEventTypeDetails': 'false',
             'layout': 'month_view',
