@@ -36,16 +36,14 @@ export default function SchedulingCalendar({ calLink = 'dave-graham-xhc6rb/disco
       <div className="bg-white rounded-lg shadow-lg p-6 border border-[#e8eeeb]">
         <Cal
           calLink={calLink}
-          style={{ width: '100%', height: '100%', minHeight: '500px' }}
+          style={{ width: '100%', height: '100%', minHeight: '550px' }}
           config={{
-            name: 'LFG Consulting',
-            theme: 'light',
-            hideEventTypeDetails: 'false',
-            layout: 'month_view',
-            styles: {
-              branding: { brandColor: '#2c4a3c' },
-              body: { background: 'transparent' }
-            } as any // Type assertion for Cal.com's incomplete types
+            'name': 'LFG Consulting',
+            'theme': 'light',
+            'hideEventTypeDetails': 'false',
+            'layout': 'month_view',
+            'styles.branding.brandColor': '#2c4a3c',
+            'styles.body.background': 'transparent'
           }}
         />
       </div>
