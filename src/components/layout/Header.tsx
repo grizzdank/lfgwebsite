@@ -10,6 +10,7 @@ const menuItems = [
   { name: 'Home', href: '/' },
   { name: 'Team', href: '/#team' },
   { name: 'Services', href: '/#services' },
+  { name: 'Schedule', href: '/schedule' },
   { name: 'Contact', href: '/contact' },
 ] as const;
 
@@ -17,7 +18,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isContactPage = pathname === '/contact';
+  const isLightPage = pathname === '/contact' || pathname === '/schedule';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +51,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`${
-                  isScrolled || isContactPage ? 'text-[#385449]' : 'text-white'
+                  isScrolled || isLightPage ? 'text-[#385449]' : 'text-white'
                 } hover:text-[#c17f59] transition-colors`}
               >
                 {item.name}
