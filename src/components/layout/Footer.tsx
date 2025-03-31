@@ -84,7 +84,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:info@lfgconsultants.com"
+                href="mailto:dave@lfgconsultants.com"
                 className="text-[#e8eeeb] hover:text-[#c17f59] transition-colors"
               >
                 <span className="sr-only">Email</span>
