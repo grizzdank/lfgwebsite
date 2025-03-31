@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
-  title: "LFG Consulting - Project Management & AI Consulting Services",
+  title: "LFG Consulting - Navigate Change. Embrace AI. Build Fast.",
   description: "Empowering organizations to thrive through expert change management, AI-driven workflow optimization, and rapid solution development.",
   metadataBase: new URL('https://lfgconsultants.com'),
   keywords: "project management, change management, process improvement, AI consulting, business consulting",
