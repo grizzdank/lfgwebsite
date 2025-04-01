@@ -30,7 +30,7 @@ const pricingTiers = {
       ]
     }
   ],
-  'ai-workflow-integration': [
+  'ai-workflow-design-integration': [
     {
       name: 'Starter',
       price: 'From $5,000',
