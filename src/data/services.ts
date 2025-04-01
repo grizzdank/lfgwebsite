@@ -7,7 +7,7 @@ export interface Service {
 export const services: Service[] = [
   {
     title: 'Organizational Change Management (OCM)',
-    description: 'We help teams confidently navigate change, ensuring new tools, systems, and processes stick. Our seasoned OCM experts deliver customized strategies, training, and support to drive adoption, engagement, and sustainable success.',
+    description: 'Navigate organizational transformation with confidence and precision. Our expert OCM strategists design and implement comprehensive change programs that align people, processes, and technology. We deliver tailored training, communication frameworks, and adoption strategies that transform resistance into engagement, ensuring your initiatives not only succeed but create lasting positive impact across your organization.',
     image: '/images/services/ocm.png'
   },
   {
@@ -17,7 +17,7 @@ export const services: Service[] = [
   },
   {
     title: 'Rapid MVP Development',
-    description: 'Fast-track your ideas from concept to market-ready MVPs. Leveraging AI-powered prototyping methods, we rapidly deliver scalable solutions that help you validate ideas, capture opportunities, and stay ahead of competitors.',
+    description: 'Accelerate your path from concept to market-ready solutions with our innovative MVP development approach. We combine cutting-edge AI-powered prototyping with lean development methodologies to rapidly deliver scalable, production-grade applications. Our process helps you validate ideas quickly, capture market opportunities decisively, and iterate based on real-world feedback, ensuring your innovation stays ahead of the competition.',
     image: '/images/services/mvp.png'
   }
 ]; 
