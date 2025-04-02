@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import ClientLayout from "@/components/layout/ClientLayout";
 import { siteMetadata } from "@/config/metadata";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
+        <GoogleAnalytics />
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
