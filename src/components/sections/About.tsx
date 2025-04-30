@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import LogoCarousel from '../LogoCarousel';
 
 const team = [
   {
@@ -35,7 +36,7 @@ export default function About() {
         >
           Meet Our Team
         </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
           {team.map((member, index) => (
             <motion.div
               key={member.name}
@@ -112,6 +113,8 @@ export default function About() {
             </motion.div>
           ))}
         </div>
+        
+        <LogoCarousel />
       </div>
     </section>
   );

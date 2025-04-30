@@ -32,10 +32,20 @@ const pricingTiers = {
   ],
   'ai-workflow-design-integration': [
     {
+      name: 'Advisory',
+      price: 'From $2,000',
+      features: [
+        'AI Readiness Assessment',
+        'Policy and Strategy Development',
+        'Implementation Roadmap',
+      ]
+    },
+    {
       name: 'Starter',
       price: 'From $5,000',
       features: [
         'AI Readiness Assessment',
+        'Policy and Strategy Development',
         'Workflow Analysis',
         'Basic AI Integration',
         'Team Training',
@@ -47,6 +57,7 @@ const pricingTiers = {
       price: 'Custom Quote',
       features: [
         'Advanced AI Implementation',
+        'Policy and Strategy Development',
         'Custom Model Development',
         'Full Process Automation',
         'Extended Training Program',
@@ -57,9 +68,9 @@ const pricingTiers = {
   'rapid-mvp-development': [
     {
       name: 'MVP Sprint',
-      price: 'From $15,000',
+      price: 'From $8,000',
       features: [
-        '4-Week Development Sprint',
+        '4-6 Week Development Sprint',
         'Core Feature Set',
         'User Testing',
         'Technical Documentation',
@@ -68,7 +79,7 @@ const pricingTiers = {
     },
     {
       name: 'Scale-Up',
-      price: 'Custom Quote',
+      price: 'Custom Monthly Retainer',
       features: [
         'Extended Development',
         'Advanced Features',

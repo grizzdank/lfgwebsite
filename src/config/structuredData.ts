@@ -65,7 +65,7 @@ export const websiteSchema = {
   "@id": "https://lfgconsultants.com/#website",
   "url": "https://lfgconsultants.com",
   "name": "LFG Consulting",
-  "description": "Navigate Change. Embrace AI. Build Fast.",
+  "description": "Navigate Change. Embrace AI. Grow Boldly.",
   "publisher": {
     "@id": "https://lfgconsultants.com"
   }

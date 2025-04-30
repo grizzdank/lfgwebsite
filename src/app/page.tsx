@@ -30,7 +30,7 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Navigate Change. Embrace AI. Build Fast.
+            Navigate Change. Embrace AI. Grow Boldly.
           </motion.h1>
           <motion.p
             className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-white/80"

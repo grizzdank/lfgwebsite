@@ -1,0 +1,106 @@
+# Hero Animation Sprint – Implementation Outline
+
+## 0. Prep
+
+- **Install Lottie**
+  ```bash
+  npm i lottie-react
+  ```
+- **Asset**
+  - Save your seagull loop JSON in `public/lottie/seagulls.json`.
+
+---
+
+## 1. Create helper components under `src/components/hero/`
+
+### `ParallaxBackground.tsx`
+```tsx
+'use client';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
+import { useRef } from 'react';
+
+export default function ParallaxBackground() {
+  const reduce = useReducedMotion();
+  const ref = useRef(null);
+
+  if (reduce) return null; // honor prefers‑reduced‑motion
+
+  const { scrollY } = useScroll({ target: ref, offset: ['start start', 'end start'] });
+  const y = useTransform(scrollY, [0, 300], [0, 25]);
+  const x = useTransform(scrollY, [0, 300], [0, 15]);
+
+  return (
+    <motion.div
+      ref={ref}
+      aria-hidden
+      className="absolute inset-0 bg-[url('/hero-background.jpg')] bg-cover bg-center pointer-events-none"
+      style={{ x, y }}
+    />
+  );
+}
+```
+
+### `BirdFlock.tsx`
+```tsx
+'use client';
+import { useReducedMotion } from 'framer-motion';
+import Lottie from 'lottie-react';
+import gulls from '@/../public/lottie/seagulls.json'; // adjust path if needed
+
+export default function BirdFlock() {
+  const reduce = useReducedMotion();
+  if (reduce) return null;
+
+  return (
+    <Lottie
+      animationData={gulls}
+      loop
+      className="absolute inset-0 z-20 pointer-events-none opacity-80 mix-blend-screen"
+      style={{ width: '100%', height: '100%' }}
+    />
+  );
+}
+```
+
+---
+
+## 2. Inject into `src/app/page.tsx`
+
+1. **Imports**
+   ```tsx
+   import ParallaxBackground from '@/components/hero/ParallaxBackground';
+   import BirdFlock from '@/components/hero/BirdFlock';
+   ```
+2. **Hero markup** – replace existing section:
+   ```tsx
+   <section className="relative h-screen flex items-center justify-center overflow-hidden">
+     {/* Base static LCP image */}
+     <Image /* existing props */ />
+
+     {/* Subtle parallax copy */}
+     <ParallaxBackground />
+
+     {/* Seagull loop */}
+     <BirdFlock />
+
+     {/* Headline / CTA block */}
+     <div className="relative z-30 text-center text-white px-4">
+       {/* unchanged */}
+     </div>
+   </section>
+   ```
+
+---
+
+## 3. Performance & QA Checklist
+
+- **Lighthouse**: confirm no LCP regression; hero JPG still loads first.
+- **Accessibility**: toggle DevTools → Rendering → *Emulate reduced motion* (birds & parallax should disappear).
+- **Mobile Safari**: verify smooth transforms (no jank on iOS GPU).
+- **Commit message**: `feat(hero): add subtle parallax + seagull Lottie animation`.
+
+---
+
+## 4. Done
+Merge ➜ push ➜ Vercel preview.  🎉
+

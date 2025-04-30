@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
-  title: "LFG Consulting - Navigate Change. Embrace AI. Build Fast.",
+  title: "LFG Consulting - Navigate Change. Embrace AI. Grow Boldly.",
   description: "Empowering organizations to thrive through expert change management, AI-driven workflow optimization, and rapid solution development.",
   metadataBase: new URL('https://lfgconsultants.com'),
   keywords: "project management, change management, process improvement, AI consulting, business consulting",
   openGraph: {
     type: 'website',
-    title: 'LFG Consulting - Navigate Change. Embrace AI. Build Fast.',
+    title: 'LFG Consulting - Navigate Change. Embrace AI. Grow Boldly.',
     description: 'Empowering organizations to thrive through expert change management, AI-driven workflow optimization, and rapid solution development.',
     url: 'https://lfgconsultants.com',
     siteName: 'LFG Consulting',
@@ -23,7 +23,7 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'LFG Consulting - Navigate Change. Embrace AI. Build Fast.',
+    title: 'LFG Consulting - Navigate Change. Embrace AI. Grow Boldly.',
     description: 'Empowering organizations to thrive through expert change management, AI-driven workflow optimization, and rapid solution development.',
     images: ['/images/logo.png']
   },
