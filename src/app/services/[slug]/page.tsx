@@ -88,6 +88,11 @@ export async function generateMetadata(
   };
 }
 
-export default function ServicePage() {
+interface ServicePageProps {
+  params: { slug: string };
+  // searchParams?: { [key: string]: string | string[] | undefined }; // We can add this if needed later
+}
+
+export default function ServicePage({ params }: ServicePageProps) {
   return <ServicePageClientContent />;
 } 
