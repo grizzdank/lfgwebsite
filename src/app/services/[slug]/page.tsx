@@ -93,6 +93,9 @@ interface ServicePageProps {
   // searchParams?: { [key: string]: string | string[] | undefined }; // We can add this if needed later
 }
 
-export default function ServicePage({ params }: ServicePageProps) {
+export default function ServicePage({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  params
+}: ServicePageProps) {
   return <ServicePageClientContent />;
 } 
