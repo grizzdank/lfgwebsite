@@ -91,6 +91,6 @@ export async function generateMetadata(
 export default function ServicePage({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   params
-}: { params: { slug: string } }) {
+}: { params: { slug: string } }): JSX.Element {
   return <ServicePageClientContent />;
 } 
