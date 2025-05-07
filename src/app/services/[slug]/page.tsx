@@ -1,9 +1,9 @@
 // 'use client'; // This line MUST be removed or commented out for metadata to work.
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { useParams } from 'next/navigation';
-import { services, type Service, pricingTiers } from '@/data/services';
+// import { motion } from 'framer-motion'; // Removed unused import
+// import Image from 'next/image'; // Removed unused import
+// import { useParams } from 'next/navigation'; // Removed unused import
+import { services } from '@/data/services'; // Removed unused type Service and pricingTiers
 import type { Metadata, ResolvingMetadata } from 'next';
 import { siteMetadata } from '@/config/metadata';
 import ServicePageClientContent from '@/components/page/ServicePageClientContent';
@@ -20,7 +20,7 @@ type OGImageObject = {
 
 export async function generateMetadata(
   { params }: { params: { slug: string } },
-  parent: ResolvingMetadata
+  _parent: ResolvingMetadata // Prefixed unused parent parameter
 ): Promise<Metadata> {
   const slug = params.slug;
   const service = services.find(s => generateServiceSlug(s.title) === slug);
@@ -53,7 +53,7 @@ export async function generateMetadata(
     alt: service.title,
   };
 
-  let finalOGImages: OGImageObject[] = [serviceOGImage];
+  const finalOGImages: OGImageObject[] = [serviceOGImage]; // Changed let to const
   const defaultSiteOGImages = siteMetadata.openGraph?.images;
   if (Array.isArray(defaultSiteOGImages) && defaultSiteOGImages.length > 0) {
     const siteLogo = defaultSiteOGImages[0] as OGImageObject; 

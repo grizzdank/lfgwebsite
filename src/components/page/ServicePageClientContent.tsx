@@ -2,102 +2,45 @@
 
 // import { motion } from 'framer-motion'; // Moved to client component
 // import Image from 'next/image'; // Moved to client component
-import { useParams } from 'next/navigation'; // Moved to client component
-import { services, type Service, pricingTiers } from '@/data/services';
-import type { Metadata, ResolvingMetadata } from 'next';
-import { siteMetadata } from '@/config/metadata';
-import ServicePageClientContent from '@/components/page/ServicePageClientContent'; // Import the new client component
-import { generateServiceSlug } from '@/utils/slugs'; // Import shared function
+// import { useParams } from 'next/navigation'; // Will be removed as unused for now
+// import { services, type Service, pricingTiers } from '@/data/services'; // Service and pricingTiers to be removed as unused for now
 
-// pricingTiers definition was here. It needs to be accessible by the client component.
-// For generateMetadata, it only needs 'services' and 'generateServiceSlug'.
-// The client component will handle its own data fetching/filtering using useParams.
+// The following imports are likely related to the removed generateMetadata and will be removed:
+// import type { Metadata, ResolvingMetadata } from 'next';
+// import { siteMetadata } from '@/config/metadata';
+// import ServicePageClientContent from '@/components/page/ServicePageClientContent'; // Self import, definitely remove
+// import { generateServiceSlug } from '@/utils/slugs';
 
-// Helper function to generate slugs (consistent with component logic)
-// This is used by generateMetadata. The client component should have its own or import a shared one.
-// function generateServiceSlug(title: string): string { ... }
+// All generateMetadata logic, OGImageObject type, and the old ServicePage export will be removed.
 
-// Define a simpler type for what we expect an image object to be for OpenGraph
-type OGImageObject = {
-  url: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  type?: string;
-};
+// TODO: Implement actual client component rendering logic here.
+// For now, ensure it imports what it actually uses.
+// Assuming useParams, services, pricingTiers might be used in the future for rendering.
+// For now, let's only keep imports that are *not* flagged by ESLint or are essential.
 
-export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const slug = params.slug;
-  // generateServiceSlug is defined above in this file for generateMetadata's use
-  const service = services.find(s => generateServiceSlug(s.title) === slug);
+import { useParams } from 'next/navigation';
+import { services, pricingTiers } from '@/data/services';
+import { generateServiceSlug } from '@/utils/slugs'; // Keep if slug generation is needed on client
 
-  if (!service) {
-    return {
-      title: 'Service Not Found | LFG Consulting',
-      description: 'The service you are looking for could not be found.',
-      openGraph: {
-        ...siteMetadata.openGraph,
-        title: 'Service Not Found | LFG Consulting',
-        description: 'The service you are looking for could not be found.',
-        url: `/services/${slug}`,
-        images: siteMetadata.openGraph?.images || [],
-      },
-      twitter: {
-        ...siteMetadata.twitter,
-        title: 'Service Not Found | LFG Consulting',
-        description: 'The service you are looking for could not be found.',
-        images: siteMetadata.twitter?.images || [],
-      }
-    };
+export default function ServicePageClientContent() {
+  const params = useParams();
+  const slug = params.slug as string;
+
+  // Example: Find the current service based on slug
+  const currentService = services.find(s => generateServiceSlug(s.title) === slug);
+  // Example: Get pricing for the current service
+  // const currentPricing = pricingTiers[slug]; // Make sure slug matches keys in pricingTiers
+
+  if (!currentService) {
+    return <div>Service not found.</div>;
   }
 
-  const servicePageTitle = `${service.title} | Services | LFG Consulting`;
-  const servicePageDescription = service.description;
-
-  const serviceOGImage: OGImageObject = {
-    url: service.image, 
-    alt: service.title,
-  };
-
-  let finalOGImages: OGImageObject[] = [serviceOGImage];
-  const defaultSiteOGImages = siteMetadata.openGraph?.images;
-  if (Array.isArray(defaultSiteOGImages) && defaultSiteOGImages.length > 0) {
-    const siteLogo = defaultSiteOGImages[0] as OGImageObject; 
-    if (siteLogo && siteLogo.url !== service.image) {
-      finalOGImages.push(siteLogo);
-    }
-  } else if (typeof defaultSiteOGImages === 'object' && defaultSiteOGImages !== null && 'url' in defaultSiteOGImages) {
-    const singleSiteLogo = defaultSiteOGImages as OGImageObject;
-    if (singleSiteLogo.url !== service.image) {
-        finalOGImages.push(singleSiteLogo);
-    }
-  }
-
-  return {
-    title: servicePageTitle,
-    description: servicePageDescription,
-    openGraph: {
-      ...siteMetadata.openGraph, 
-      title: `${service.title} | LFG Consulting`, 
-      description: servicePageDescription, 
-      url: `/services/${slug}`, 
-      images: finalOGImages, 
-    },
-    twitter: {
-      ...siteMetadata.twitter, 
-      card: 'summary_large_image',
-      title: `${service.title} | LFG Consulting`, 
-      description: servicePageDescription, 
-      images: [service.image], 
-    },
-  };
-}
-
-export default function ServicePage() {
-  // This Server Component no longer needs to pass props like slug or service to the client component,
-  // as the client component will use useParams itself.
-  return <ServicePageClientContent />;
+  return (
+    <div>
+      <h1>{currentService.title}</h1>
+      <p>{currentService.description}</p>
+      {/* TODO: Render pricing information using currentPricing if available */}
+      {/* TODO: Add Framer Motion animations and Image components as needed */}
+    </div>
+  );
 } 
