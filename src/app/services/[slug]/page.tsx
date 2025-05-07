@@ -4,7 +4,7 @@
 // import Image from 'next/image'; // Removed unused import
 // import { useParams } from 'next/navigation'; // Removed unused import
 import { services } from '@/data/services'; // Removed unused type Service and pricingTiers
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata } from 'next'; // Removed unused ResolvingMetadata
 import { siteMetadata } from '@/config/metadata';
 import ServicePageClientContent from '@/components/page/ServicePageClientContent';
 import { generateServiceSlug } from '@/utils/slugs';
