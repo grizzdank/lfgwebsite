@@ -20,7 +20,8 @@ type OGImageObject = {
 
 export async function generateMetadata(
   { params }: { params: { slug: string } },
-  _parent: ResolvingMetadata // Added _parent parameter back
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _parent: ResolvingMetadata // Added ESLint disable comment for unused _parent
 ): Promise<Metadata> {
   const slug = params.slug;
   const service = services.find(s => generateServiceSlug(s.title) === slug);
