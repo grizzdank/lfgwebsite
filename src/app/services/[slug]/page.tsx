@@ -4,7 +4,7 @@
 // import Image from 'next/image'; // Removed unused import
 // import { useParams } from 'next/navigation'; // Removed unused import
 import { services } from '@/data/services'; // Removed unused type Service and pricingTiers
-import type { Metadata } from 'next'; // Removed unused ResolvingMetadata
+import type { Metadata, ResolvingMetadata } from 'next'; // Added ResolvingMetadata back
 import { siteMetadata } from '@/config/metadata';
 import ServicePageClientContent from '@/components/page/ServicePageClientContent';
 import { generateServiceSlug } from '@/utils/slugs';
@@ -19,8 +19,8 @@ type OGImageObject = {
 };
 
 export async function generateMetadata(
-  { params }: { params: { slug: string } }
-  // _parent: ResolvingMetadata // Removed unused _parent parameter entirely
+  { params }: { params: { slug: string } },
+  _parent: ResolvingMetadata // Added _parent parameter back
 ): Promise<Metadata> {
   const slug = params.slug;
   const service = services.find(s => generateServiceSlug(s.title) === slug);
