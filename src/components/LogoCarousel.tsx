@@ -87,6 +87,7 @@ export default function LogoCarousel() {
                       src={partner.logo}
                       alt={partner.alt}
                       fill
+                      sizes="160px"
                       className="object-contain"
                       priority={index < 3}
                     />

@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Google Tag Manager Script */}
+      {/* Restore Google Tag Manager Script */}
       <Script id="google-tag-manager-head" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -28,7 +28,7 @@ export default function RootLayout({
         })(window,document,'script','dataLayer','GTM-PM9KLKG4');`}
       </Script>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        {/* Google Tag Manager NoScript */}
+        {/* Restore Google Tag Manager NoScript */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PM9KLKG4"

@@ -20,4 +20,90 @@ export const services: Service[] = [
     description: 'Accelerate your path from concept to market-ready solutions with our innovative MVP development approach. We combine cutting-edge AI-powered prototyping with lean development methodologies to rapidly deliver scalable, production-grade applications. Our process helps you validate ideas quickly, capture market opportunities decisively, and iterate based on real-world feedback, ensuring your innovation stays ahead of the competition.',
     image: '/images/services/mvp.png'
   }
-]; 
+];
+
+export const pricingTiers = {
+  'organizational-change-management-ocm': [
+    {
+      name: 'Assessment & Strategy',
+      price: 'Custom Quote',
+      features: [
+        'Change Readiness Assessment',
+        'Stakeholder Analysis',
+        'Custom Change Strategy',
+        'Risk Assessment',
+        'Communication Plan'
+      ]
+    },
+    {
+      name: 'Implementation',
+      price: 'Project-Based',
+      features: [
+        'Change Leadership Training',
+        'Process Documentation',
+        'Training Program Development',
+        'Adoption Metrics',
+        'Ongoing Support'
+      ]
+    }
+  ],
+  'ai-workflow-design-integration': [
+    {
+      name: 'Advisory',
+      price: 'From $2,000',
+      features: [
+        'AI Readiness Assessment',
+        'Policy and Strategy Development',
+        'Implementation Roadmap',
+      ]
+    },
+    {
+      name: 'Starter',
+      price: 'From $5,000',
+      features: [
+        'AI Readiness Assessment',
+        'Policy and Strategy Development',
+        'Workflow Analysis',
+        'Basic AI Integration',
+        'Team Training',
+        '30-Day Support'
+      ]
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom Quote',
+      features: [
+        'Advanced AI Implementation',
+        'Policy and Strategy Development',
+        'Custom Model Development',
+        'Full Process Automation',
+        'Extended Training Program',
+        'Dedicated Support'
+      ]
+    }
+  ],
+  'rapid-mvp-development': [
+    {
+      name: 'MVP Sprint',
+      price: 'From $8,000',
+      features: [
+        '4-6 Week Development Sprint',
+        'Core Feature Set',
+        'User Testing',
+        'Technical Documentation',
+        'Deployment Support'
+      ]
+    },
+    {
+      name: 'Scale-Up',
+      price: 'Custom Monthly Retainer',
+      features: [
+        'Extended Development',
+        'Advanced Features',
+        'Performance Optimization',
+        'Security Hardening',
+        'Maintenance Plan'
+      ]
+    }
+  ]
+}; 

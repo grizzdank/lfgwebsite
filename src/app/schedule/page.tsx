@@ -1,9 +1,27 @@
 import { Metadata } from 'next';
-import SchedulingCalendar from '@/components/SchedulingCalendar';
+import { siteMetadata } from '@/config/metadata';
+// No longer dynamically importing here
+// import dynamic from 'next/dynamic'; 
+import SchedulePageClientWrapper from '@/components/page/SchedulePageClientWrapper'; // Import the new client wrapper
+
+// const SchedulingCalendarWithNoSSR = dynamic(...); // Removed dynamic import from here
 
 export const metadata: Metadata = {
   title: 'Schedule a Discovery Meeting | LFG Consulting',
   description: 'Book a discovery meeting with LFG Consulting to discuss your business needs and how we can help you achieve your goals.',
+  openGraph: {
+    ...siteMetadata.openGraph,
+    title: 'Schedule a Discovery Meeting | LFG Consulting',
+    description: 'Book a discovery meeting with LFG Consulting to discuss your business needs and how we can help you achieve your goals.',
+    url: '/schedule',
+    images: siteMetadata.openGraph?.images || [],
+  },
+  twitter: {
+    ...siteMetadata.twitter,
+    title: 'Schedule a Discovery Meeting | LFG Consulting',
+    description: 'Book a discovery meeting with LFG Consulting to discuss your business needs and how we can help you achieve your goals.',
+    images: siteMetadata.twitter?.images || [],
+  },
 };
 
 export default function SchedulePage() {
@@ -15,7 +33,8 @@ export default function SchedulePage() {
           Choose a time that works best for you to discuss your business needs and explore how we can help you achieve your goals.
         </p>
       </div>
-      <SchedulingCalendar />
+      {/* Render the client wrapper, which handles the dynamic import */}
+      <SchedulePageClientWrapper />
     </main>
   );
 } 

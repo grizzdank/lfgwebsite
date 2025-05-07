@@ -51,6 +51,7 @@ export default function About() {
                   src={member.image}
                   alt={member.name}
                   fill
+                  sizes="256px"
                   style={{ objectFit: 'cover' }}
                 />
               </div>

@@ -1,13 +1,21 @@
-// 'use client'; // This line MUST be removed or commented out for metadata to work.
+'use client';
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { useParams } from 'next/navigation';
+// import { motion } from 'framer-motion'; // Moved to client component
+// import Image from 'next/image'; // Moved to client component
+import { useParams } from 'next/navigation'; // Moved to client component
 import { services, type Service, pricingTiers } from '@/data/services';
 import type { Metadata, ResolvingMetadata } from 'next';
 import { siteMetadata } from '@/config/metadata';
-import ServicePageClientContent from '@/components/page/ServicePageClientContent';
-import { generateServiceSlug } from '@/utils/slugs';
+import ServicePageClientContent from '@/components/page/ServicePageClientContent'; // Import the new client component
+import { generateServiceSlug } from '@/utils/slugs'; // Import shared function
+
+// pricingTiers definition was here. It needs to be accessible by the client component.
+// For generateMetadata, it only needs 'services' and 'generateServiceSlug'.
+// The client component will handle its own data fetching/filtering using useParams.
+
+// Helper function to generate slugs (consistent with component logic)
+// This is used by generateMetadata. The client component should have its own or import a shared one.
+// function generateServiceSlug(title: string): string { ... }
 
 // Define a simpler type for what we expect an image object to be for OpenGraph
 type OGImageObject = {
@@ -23,6 +31,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const slug = params.slug;
+  // generateServiceSlug is defined above in this file for generateMetadata's use
   const service = services.find(s => generateServiceSlug(s.title) === slug);
 
   if (!service) {
@@ -88,5 +97,7 @@ export async function generateMetadata(
 }
 
 export default function ServicePage() {
+  // This Server Component no longer needs to pass props like slug or service to the client component,
+  // as the client component will use useParams itself.
   return <ServicePageClientContent />;
 } 
