@@ -88,14 +88,9 @@ export async function generateMetadata(
   };
 }
 
-interface ServicePageProps {
-  params: { slug: string };
-  // searchParams?: { [key: string]: string | string[] | undefined }; // We can add this if needed later
-}
-
 export default function ServicePage({
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   params
-}: ServicePageProps) {
+}: { params: { slug: string } }) {
   return <ServicePageClientContent />;
 } 
