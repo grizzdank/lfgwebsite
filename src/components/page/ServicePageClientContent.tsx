@@ -19,8 +19,8 @@
 // For now, let's only keep imports that are *not* flagged by ESLint or are essential.
 
 import { useParams } from 'next/navigation';
-import { services, pricingTiers } from '@/data/services';
-import { generateServiceSlug } from '@/utils/slugs'; // Keep if slug generation is needed on client
+import { services } from '@/data/services';
+import { generateServiceSlug } from '@/utils/slugs';
 
 export default function ServicePageClientContent() {
   const params = useParams();
@@ -29,7 +29,7 @@ export default function ServicePageClientContent() {
   // Example: Find the current service based on slug
   const currentService = services.find(s => generateServiceSlug(s.title) === slug);
   // Example: Get pricing for the current service
-  // const currentPricing = pricingTiers[slug]; // Make sure slug matches keys in pricingTiers
+  // const currentPricing = pricingTiers[slug]; // pricingTiers is no longer imported
 
   if (!currentService) {
     return <div>Service not found.</div>;

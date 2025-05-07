@@ -19,8 +19,8 @@ type OGImageObject = {
 };
 
 export async function generateMetadata(
-  { params }: { params: { slug: string } },
-  _parent: ResolvingMetadata // Prefixed unused parent parameter
+  { params }: { params: { slug: string } }
+  // _parent: ResolvingMetadata // Removed unused _parent parameter entirely
 ): Promise<Metadata> {
   const slug = params.slug;
   const service = services.find(s => generateServiceSlug(s.title) === slug);
