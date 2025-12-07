@@ -10,6 +10,7 @@ const menuItems = [
   { name: 'Home', href: '/' },
   { name: 'Team', href: '/#team' },
   { name: 'Services', href: '/#services' },
+  { name: 'Portfolio', href: '/portfolio' },
   { name: 'Schedule', href: '/schedule' },
   { name: 'Contact', href: '/contact' },
 ] as const;
@@ -18,7 +19,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isLightPage = pathname === '/contact' || pathname === '/schedule';
+  const isLightPage = pathname === '/contact' || pathname === '/schedule' || pathname === '/portfolio';
 
   useEffect(() => {
     const handleScroll = () => {
