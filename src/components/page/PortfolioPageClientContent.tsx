@@ -26,7 +26,7 @@ export default function PortfolioPageClientContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Discover how we've helped organizations achieve remarkable growth through strategic organizational change management, AI workflow integration, and rapid MVP development.
+              Discover how we&apos;ve helped organizations achieve remarkable growth through strategic organizational change management, AI workflow integration, and rapid MVP development.
             </motion.p>
           </div>
 
@@ -49,7 +49,7 @@ export default function PortfolioPageClientContent() {
               What Our Clients Say
             </h2>
             <p className="mt-2 text-lg leading-8 text-[#385449]">
-              Real feedback from organizations we've helped transform and grow.
+              Real feedback from organizations we&apos;ve helped transform and grow.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function PortfolioPageClientContent() {
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
                   <blockquote className="text-[#385449] leading-relaxed mb-6">
-                    "{testimonial.body}"
+                    &quot;{testimonial.body}&quot;
                   </blockquote>
                   <div className="flex items-center">
                     <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4 bg-[#e8eeeb]">
@@ -141,7 +141,7 @@ export default function PortfolioPageClientContent() {
               Ready to Transform Your Organization?
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/90">
-              Let's discuss how our proven strategies in change management, AI integration, and rapid development can drive meaningful results for your business.
+              Let&apos;s discuss how our proven strategies in change management, AI integration, and rapid development can drive meaningful results for your business.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
