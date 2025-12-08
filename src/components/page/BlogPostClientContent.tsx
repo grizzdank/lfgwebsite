@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import { BlogPost } from "@/types/blog";
+import ProseContent from "@/components/blog/ProseContent";
 
 interface BlogPostClientContentProps {
   post: BlogPost;
@@ -125,13 +126,9 @@ export default function BlogPostClientContent({
               )}
 
               {/* Article Content */}
-              <div
-                className="prose prose-lg max-w-none mb-12"
-                style={{
-                  color: "#2c4a3c",
-                }}
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+              <div className="mb-12">
+                <ProseContent html={post.content} />
+              </div>
 
               {/* Tags */}
               {post.tags && post.tags.length > 0 && (

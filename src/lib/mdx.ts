@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
+import remarkGfm from "remark-gfm";
 import { BlogPost } from "@/types/blog";
 
 const postsDirectory = path.join(process.cwd(), "src/content/blog");
@@ -11,7 +12,10 @@ const postsDirectory = path.join(process.cwd(), "src/content/blog");
  * Convert markdown content to HTML
  */
 async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark().use(html).process(markdown);
+  const result = await remark()
+    .use(remarkGfm) // GitHub Flavored Markdown support
+    .use(html, { sanitize: false })
+    .process(markdown);
   return result.toString();
 }
 
