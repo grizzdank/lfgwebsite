@@ -1,39 +1,44 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Team', href: '/#team' },
-  { name: 'Services', href: '/#services' },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Schedule', href: '/schedule' },
-  { name: 'Contact', href: '/contact' },
+  { name: "Home", href: "/" },
+  { name: "Team", href: "/#team" },
+  { name: "Services", href: "/#services" },
+  // { name: "Portfolio", href: "/portfolio" },
+  { name: "Blog", href: "/blog" },
+  { name: "Schedule", href: "/schedule" },
+  { name: "Contact", href: "/contact" },
 ] as const;
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  const isLightPage = pathname === '/contact' || pathname === '/schedule' || pathname === '/portfolio';
+  const isLightPage =
+    pathname === "/contact" ||
+    pathname === "/schedule" ||
+    // pathname === "/portfolio" ||
+    pathname.startsWith("/blog");
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.header
       className={`fixed w-full z-50 transition-colors duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -52,7 +57,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`${
-                  isScrolled || isLightPage ? 'text-[#385449]' : 'text-white'
+                  isScrolled || isLightPage ? "text-[#385449]" : "text-white"
                 } hover:text-[#c17f59] transition-colors`}
               >
                 {item.name}
@@ -118,4 +123,4 @@ export default function Header() {
       </div>
     </motion.header>
   );
-} 
+}
