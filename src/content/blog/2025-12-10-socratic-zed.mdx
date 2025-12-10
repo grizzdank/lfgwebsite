@@ -1,0 +1,36 @@
+---
+title: "Stochastic Socrates"
+excerpt: "How Socratic learning with Claude Code compressed months of Rust learning into days"
+publishedAt: "2025-12-10T10:00:00Z"
+category: "Projects"
+tags: ["IDE", "Zed", "theCave", "howtolearn"]
+featured: false
+author:
+  name: "Dave Graham"
+  title: "Socrates' Worst Student"
+---
+## How I am using [Zed](https://zed.dev) + Claude Code to learn
+
+### So many IDEs, so little time
+
+Staying current with the rapidly evolving AI and AI dev tooling landscape is essential for preparing for the future and delivering value in the present. Like many people, I have used so many different editors and IDEs over time. There are probably almost as many different setups as there are people who use them. For the last year I have been using Cursor as my IDE and making great use of Cursor's AI agent features using various models as a pair programmer. When [Claude Code](https://claude.com/product/claude-code) came out I eagerly experimented with that. In the past month or so, I had the itch to reexamine my setup and cast around for different ways to optimize my workflow. Since I was having so much fun with Claude Code and the other CLI coding agent harnesses ([Ampcode](https://ampcode.com/) and [Opencode](https://opencode.ai/)), I played around with Nvim and [Ghostty](https://ghostty.org/) panes. 
+![Terminal setup](/blog/2025-12-10-socratic-zed/terminal.png)
+I found however, that while Nvim is a great editor, it can be a bit overengineered to set up and configure. So I decided to try out [Zed](https://zed.dev) as my new IDE and editor. Zed is a new editor that is designed to be fast and efficient. It is very customizable and packed full of useful features. One of the features that I've been getting a lot of mileage out of is its Agent Panel. Zed allows you to start Claude Code (or other cli coding agents like Opencode) in the agent panel. 
+This month, I also decided to use the [Advent of Code](https://adventofcode.com/) challenge to learn Rust. I wrote an AGENTS.md file in my project with the following instructions: 
+```
+I'm using this puzzle and the Advent of code puzzles for this month as a learning exercise to learn Rust. Guide me to learn using the socratic method. Do not solve the puzzle for me, but instead prompt me with questions and focused instruction to help me learn Rust and solve the puzzle.
+```
+![Socratic Claude](/blog/2025-12-10-socratic-zed/socratic-claude.png)
+*Here's what it looks like in practice*
+### Outcomes
+This method has been working very effectively for me. In 3 days I have gone from zero knowledge of Rust to successfully solving Days 1 & 2 puzzles. Coming from Python, I leveraged familiar concepts like iterators and pattern matching, while learning Rust's distinctive ownership model, explicit type annotations, and compile-time memory safety guarantees. Moving from Python's garbage collection to Rust's ownership system revealed how much implicit memory management I'd been taking for granted—and how much clearer code becomes when these contracts are explicit. The point of instructing Claude to use the Socratic method is so it will not solve it for me and allow me to learn, without as many blockers or dead-ends as I would experience without the instructional guidance. The key is that Claude asks me why or how I want to approach the problem, building knowledge and intuition, not just handing me the solution. Unlike traditional tutorials or documentation, the Socratic approach forces active problem-solving, which creates deeper retention and transferable mental models.  
+### Why This Matters
+This example is for fun and self-development, but this approach helps me adapt to client tech stacks and deliver real results that impact business value. This same framework applies directly to client engagements when teams need to rapidly adopt new technologies:
+
+📋 **My Learning Framework**
+>
+> 1. **Verifiable Outcome** - Choose a concrete project (Advent of Code puzzles in Rust)
+> 2. **Clear Constraints** - Set learning boundaries (Socratic methodology from Claude Code)
+> 3. **Measurable Results** - Track progress (puzzles solved, Rust competency gained)
+
+***Interested in how this approach can help your team? [Reach out](/contact) and let's collaborate!***

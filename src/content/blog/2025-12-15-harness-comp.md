@@ -18,7 +18,7 @@ I decided to compare three popular coding cli agent harnesses, [Ampcode](https:/
 ### Initializing 
 I started each agent with the same initial prompt, which I put below:
 ```
-I want to build a todo webapp for my son that he can access on his iphone. this will give him a view of the most important things he needs to take care of for the next 3 days (open to experiment with that time window), what training workout thatday, upcoming assignments due at school, that sort of thing
+I want to build a todo webapp for my son that he can access on his iphone. this will give him a view of the most important things he needs to take care of for the next 3 days (open to experiment with that time window), what training workout that day, upcoming assignments due at school, that sort of thing
 ```
 
 So each agent finished the app to a similar point, creating frontend logic and backend logic, but waiting for supabase setup and configuration. Claude appears to not have created a backend folder, although to be fair, Ampcode created one but didn't create any backend logic yet. Opencode created a backend folder with backend logic in python.
