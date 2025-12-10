@@ -12,6 +12,17 @@ export default function ProseContent({ html }: ProseContentProps) {
   useEffect(() => {
     if (!contentRef.current) return;
 
+    // Handle external links - open in new tab
+    const links = contentRef.current.querySelectorAll("a");
+    links.forEach((link) => {
+      const href = link.getAttribute("href");
+      // Check if link is external (starts with http:// or https://)
+      if (href && (href.startsWith("http://") || href.startsWith("https://"))) {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      }
+    });
+
     // Find all pre > code blocks
     const preElements = contentRef.current.querySelectorAll("pre");
 
