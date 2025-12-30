@@ -10,7 +10,7 @@ const menuItems = [
   { name: "Home", href: "/" },
   { name: "Team", href: "/#team" },
   { name: "Services", href: "/#services" },
-  // { name: "Portfolio", href: "/portfolio" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
   { name: "Schedule", href: "/schedule" },
   { name: "Contact", href: "/contact" },
@@ -23,7 +23,7 @@ export default function Header() {
   const isLightPage =
     pathname === "/contact" ||
     pathname === "/schedule" ||
-    // pathname === "/portfolio" ||
+    pathname === "/portfolio" ||
     pathname.startsWith("/blog");
 
   useEffect(() => {
