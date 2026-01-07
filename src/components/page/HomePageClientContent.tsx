@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import About from '@/components/sections/About';
 import { services } from '@/data/services';
 import type { Metadata } from 'next';
@@ -33,7 +34,7 @@ export default function HomePageClientContent() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-background.jpg"
+            src="/hero-background.webp"
             alt="Mountain landscape"
             fill
             style={{ objectFit: 'cover', objectPosition: '54% 81%' }}
@@ -65,9 +66,9 @@ export default function HomePageClientContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <a href="#services" className="btn-forest">
+            <Link href="/services" className="btn-forest">
               Explore Our Services
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -88,27 +89,28 @@ export default function HomePageClientContent() {
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
-                key={service.title}
-                className="bg-[#f3f7f5] rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#e8eeeb] group relative overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    style={{ objectFit: 'cover' }}
-                    className="transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-xl font-bold mb-4 text-[#2c4a3c]">{service.title}</h3>
-                <p className="text-[#385449] leading-relaxed">{service.description}</p>
-              </motion.div>
+              <Link key={service.title} href="/services" className="block">
+                <motion.div
+                  className="bg-[#f3f7f5] rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-[#e8eeeb] group relative overflow-hidden cursor-pointer h-full"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                >
+                  <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      style={{ objectFit: 'cover' }}
+                      className="transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-[#2c4a3c] group-hover:text-[#c17f59] transition-colors">{service.title}</h3>
+                  <p className="text-[#385449] leading-relaxed">{service.description}</p>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

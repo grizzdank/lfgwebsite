@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const menuItems = [
   { name: "Home", href: "/" },
   { name: "Team", href: "/#team" },
-  { name: "Services", href: "/#services" },
+  { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
   { name: "Schedule", href: "/schedule" },
@@ -20,11 +20,13 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  // Pages without dark hero images use dark text immediately
   const isLightPage =
     pathname === "/contact" ||
     pathname === "/schedule" ||
     pathname === "/portfolio" ||
-    pathname.startsWith("/blog");
+    pathname.startsWith("/blog") ||
+    pathname.startsWith("/services/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +48,12 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between h-16">
-          <Link href="/" className="text-2xl font-bold text-[#2c4a3c]">
+          <Link
+              href="/"
+              className={`text-2xl font-bold transition-colors ${
+                isScrolled || isLightPage ? "text-[#2c4a3c]" : "text-white"
+              }`}
+            >
             LFG Consulting
           </Link>
 
@@ -67,7 +74,9 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[#2c4a3c]"
+            className={`md:hidden transition-colors ${
+              isScrolled || isLightPage ? "text-[#2c4a3c]" : "text-white"
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg

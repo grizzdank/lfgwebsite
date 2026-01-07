@@ -8,7 +8,7 @@ const team = [
   {
     name: 'Sue Weinberger, PMP®, LSSBB, Prosci Certified',
     title: 'Founder, Co-Owner, Principal Consultant',
-    image: '/sues-headshot.jpeg',
+    image: '/sues-headshot.webp',
     bio: 'With over 15 years of extensive experience across diverse industries, I specialize in project management, change management, and business strategy. My expertise encompasses the successful execution of complex projects, guiding organizations through transformative change initiatives, and developing strategic roadmaps that drive business growth and operational efficiency.',
     linkedin: 'https://www.linkedin.com/in/sueweinberger',
     email: 'sue@lfgconsultants.com'
@@ -16,7 +16,7 @@ const team = [
   {
     name: 'Dave Graham, MBA',
     title: 'Co-Owner, Principal Consultant',
-    image: '/daves-headshot.png',
+    image: '/daves-headshot.webp',
     bio: 'As an accomplished leader with over 21 years of experience in U.S. Air Force Special Warfare as a Pararescueman, I bring a robust skill set in organizational leadership, team management, and operational excellence. I specialize in developing and executing detailed operational plans that achieve results while minimizing risks and conserving resources.',
     linkedin: 'https://www.linkedin.com/in/dave-e-graham/',
     email: 'dave@lfgconsultants.com'

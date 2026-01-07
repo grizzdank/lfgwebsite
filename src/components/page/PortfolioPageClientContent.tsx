@@ -294,7 +294,7 @@ export default function PortfolioPageClientContent() {
               </p>
               <BeforeAfterSlider
                 beforeImage={pearlywrites.images.before!}
-                afterImage="/images/portfolio/pearlywrites/after-home.png"
+                afterImage="/images/portfolio/pearlywrites/after-home.webp"
                 beforeAlt="PearlyWrites before redesign"
                 afterAlt="PearlyWrites after redesign"
               />

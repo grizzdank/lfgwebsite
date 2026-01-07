@@ -43,7 +43,7 @@ export const portfolioProjects: PortfolioProject[] = [
     technologies: ['Next.js', 'React', 'Tailwind CSS', 'Vercel'],
     images: {
       hero: '/images/portfolio/pearlywrites/after-hero.png',
-      before: '/images/portfolio/pearlywrites/before-home.png',
+      before: '/images/portfolio/pearlywrites/before-home.webp',
     },
     featured: true,
   },
