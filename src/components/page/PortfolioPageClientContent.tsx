@@ -332,7 +332,7 @@ export default function PortfolioPageClientContent() {
               className="order-2 lg:order-1"
             >
               <DeviceMockup
-                src="/hero-background.jpg"
+                src="/hero-background.webp"
                 alt="LFG Consulting website"
                 url={lfg.url}
               />
