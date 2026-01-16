@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +26,7 @@ const serviceDetails = {
   "organizational-change-management-ocm": {
     tagline: "Transform resistance into engagement",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
@@ -39,7 +40,7 @@ const serviceDetails = {
   "ai-workflow-design-integration": {
     tagline: "Human-AI collaboration, perfected",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
     ),
@@ -53,7 +54,7 @@ const serviceDetails = {
   "rapid-mvp-development": {
     tagline: "From idea to market, accelerated",
     icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
@@ -74,11 +75,98 @@ function CheckIcon() {
   );
 }
 
+// Flip card component for service image/pricing
+function ServiceFlipCard({
+  service,
+  tiers,
+  isFlipped,
+  onFlip,
+}: {
+  service: { title: string; image: string };
+  tiers: { name: string; price: string; features: string[] }[];
+  isFlipped: boolean;
+  onFlip: () => void;
+}) {
+  return (
+    <div
+      className="flip-card aspect-[4/3] w-full"
+      onClick={onFlip}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === "Enter" && onFlip()}
+      aria-label={isFlipped ? "Click to see service image" : "Click to see pricing options"}
+    >
+      <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
+        {/* Front - Service Image */}
+        <div className="flip-card-front shadow-2xl">
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            style={{ objectFit: "cover" }}
+            className="transition-transform duration-700 hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e23]/40 to-transparent" />
+          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+            <span className="text-white/90 text-sm font-medium bg-[#1a2e23]/60 px-3 py-1.5 rounded-full backdrop-blur-sm">
+              Click for pricing
+            </span>
+            <svg className="w-5 h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+            </svg>
+          </div>
+        </div>
+
+        {/* Back - Pricing Tiers */}
+        <div className="flip-card-back p-6 flex flex-col">
+          <div className="flex items-center justify-between mb-4">
+            <h4 className="text-white font-semibold text-lg">Engagement Options</h4>
+            <span className="text-white/60 text-sm">Click to flip back</span>
+          </div>
+          <div className="flex-1 overflow-y-auto space-y-3">
+            {tiers.map((tier, tierIndex) => (
+              <div
+                key={tier.name}
+                className="bg-white/10 rounded-lg p-4 backdrop-blur-sm"
+              >
+                <div className="flex items-start justify-between mb-2">
+                  <div>
+                    <h5 className="font-bold text-white">{tier.name}</h5>
+                    <p className="text-[#c17f59] font-semibold text-sm">{tier.price}</p>
+                  </div>
+                  <span className="text-white/40 font-bold text-sm">
+                    {String(tierIndex + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <ul className="space-y-1">
+                  {tier.features.map((feature, fIndex) => (
+                    <li key={fIndex} className="flex items-start gap-2 text-xs text-white/80">
+                      <div className="w-1 h-1 rounded-full bg-[#c17f59] mt-1.5 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ServicesPageClientContent() {
+  const [flippedCards, setFlippedCards] = useState<Record<string, boolean>>({});
+
+  const toggleFlip = (slug: string) => {
+    setFlippedCards((prev) => ({ ...prev, [slug]: !prev[slug] }));
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-[#fafbfa]">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden z-0">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden z-0">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -135,32 +223,30 @@ export default function ServicesPageClientContent() {
         return (
           <section
             key={slug}
-            className={`py-24 ${isEven ? "bg-white" : "bg-[#f3f7f5]"}`}
+            className={`py-32 ${isEven ? "bg-white" : "bg-[#f3f7f5]"}`}
           >
             <div className="container mx-auto px-4">
               <motion.div
-                className={`grid lg:grid-cols-2 gap-16 items-start ${
-                  !isEven ? "lg:flex-row-reverse" : ""
-                }`}
+                className="grid lg:grid-cols-2 gap-16 items-center"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
               >
-                {/* Content Side */}
+                {/* Content Side - Always Left */}
                 <motion.div
-                  className={isEven ? "lg:order-1" : "lg:order-2"}
-                  initial={{ opacity: 0, x: isEven ? -40 : 40 }}
+                  className="lg:order-1"
+                  initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 bg-[#2c4a3c] rounded-2xl flex items-center justify-center text-white">
-                      {details?.icon}
-                    </div>
-                    <span className="px-4 py-1.5 bg-[#e8f4f0] text-[#2c4a3c] rounded-full text-sm font-semibold">
-                      Service {String(index + 1).padStart(2, "0")}
+                  {/* Simplified header with inline icon */}
+                  <div className="flex items-center gap-3 mb-4 text-[#2c4a3c]">
+                    {details?.icon}
+                    <span className="text-sm font-medium uppercase tracking-wider">
+                      {service.title.includes("OCM") ? "Change Management" :
+                       service.title.includes("AI") ? "AI Integration" : "Development"}
                     </span>
                   </div>
 
@@ -183,19 +269,14 @@ export default function ServicesPageClientContent() {
 
                   {/* Highlights */}
                   {details?.highlights && (
-                    <div className="bg-[#f3f7f5] rounded-2xl p-6 mb-8 border border-[#e8eeeb]">
-                      <h4 className="font-semibold text-[#1a2e23] mb-4">
-                        Key Capabilities
-                      </h4>
-                      <ul className="space-y-3">
-                        {details.highlights.map((highlight, i) => (
-                          <li key={i} className="flex items-start gap-3">
-                            <CheckIcon />
-                            <span className="text-[#4a5d52]">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <ul className="space-y-3 mb-8">
+                      {details.highlights.map((highlight, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <CheckIcon />
+                          <span className="text-[#4a5d52]">{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   )}
 
                   <Link
@@ -209,74 +290,20 @@ export default function ServicesPageClientContent() {
                   </Link>
                 </motion.div>
 
-                {/* Image & Pricing Side */}
+                {/* Image/Pricing Flip Card - Always Right */}
                 <motion.div
-                  className={isEven ? "lg:order-2" : "lg:order-1"}
-                  initial={{ opacity: 0, x: isEven ? 40 : -40 }}
+                  className="lg:order-2"
+                  initial={{ opacity: 0, x: 40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  {/* Service Image */}
-                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl mb-8">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      style={{ objectFit: "cover" }}
-                      className="transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a2e23]/20 to-transparent" />
-                  </div>
-
-                  {/* Pricing Tiers */}
-                  {tiers.length > 0 && (
-                    <div className="space-y-4">
-                      <h4 className="font-semibold text-[#1a2e23] text-lg">
-                        Engagement Options
-                      </h4>
-                      <div className="grid gap-4">
-                        {tiers.map((tier, tierIndex) => (
-                          <motion.div
-                            key={tier.name}
-                            className="bg-white rounded-xl p-5 border border-[#e8eeeb] shadow-sm hover:shadow-md transition-shadow"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: tierIndex * 0.1 }}
-                          >
-                            <div className="flex items-start justify-between mb-3">
-                              <div>
-                                <h5 className="font-bold text-[#1a2e23]">
-                                  {tier.name}
-                                </h5>
-                                <p className="text-[#c17f59] font-semibold">
-                                  {tier.price}
-                                </p>
-                              </div>
-                              <div className="w-10 h-10 bg-[#f3f7f5] rounded-lg flex items-center justify-center">
-                                <span className="text-[#2c4a3c] font-bold text-sm">
-                                  {String(tierIndex + 1).padStart(2, "0")}
-                                </span>
-                              </div>
-                            </div>
-                            <ul className="space-y-2">
-                              {tier.features.map((feature, fIndex) => (
-                                <li
-                                  key={fIndex}
-                                  className="flex items-start gap-2 text-sm text-[#4a5d52]"
-                                >
-                                  <div className="w-1.5 h-1.5 rounded-full bg-[#2c4a3c] mt-1.5 flex-shrink-0" />
-                                  {feature}
-                                </li>
-                              ))}
-                            </ul>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  <ServiceFlipCard
+                    service={service}
+                    tiers={tiers}
+                    isFlipped={flippedCards[slug] || false}
+                    onFlip={() => toggleFlip(slug)}
+                  />
                 </motion.div>
               </motion.div>
             </div>
@@ -284,8 +311,8 @@ export default function ServicesPageClientContent() {
         );
       })}
 
-      {/* Process Section */}
-      <section className="py-24 bg-[#1a2e23] text-white">
+      {/* Process Section - Simplified */}
+      <section className="py-32 bg-[#1a2e23] text-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="text-center mb-16"
@@ -307,44 +334,41 @@ export default function ServicesPageClientContent() {
           <div className="grid md:grid-cols-4 gap-8">
             {[
               {
-                step: "01",
+                step: "1",
                 title: "Discovery",
                 description: "We listen deeply to understand your challenges, goals, and organizational context.",
               },
               {
-                step: "02",
+                step: "2",
                 title: "Strategy",
                 description: "We design a tailored approach that aligns with your timeline and resources.",
               },
               {
-                step: "03",
+                step: "3",
                 title: "Execute",
                 description: "We deliver with precision, keeping you informed at every milestone.",
               },
               {
-                step: "04",
+                step: "4",
                 title: "Sustain",
                 description: "We ensure lasting impact through training, documentation, and ongoing support.",
               },
             ].map((phase, index) => (
               <motion.div
                 key={phase.step}
-                className="relative"
+                className="text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="text-6xl font-bold text-[#2c4a3c] mb-4">
-                  {phase.step}
+                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#2c4a3c] flex items-center justify-center">
+                  <span className="text-2xl font-bold text-white">{phase.step}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">
                   {phase.title}
                 </h3>
                 <p className="text-white/70">{phase.description}</p>
-                {index < 3 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-[2px] bg-gradient-to-r from-[#c17f59] to-transparent -translate-x-8" />
-                )}
               </motion.div>
             ))}
           </div>
@@ -352,7 +376,7 @@ export default function ServicesPageClientContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#f3f7f5]">
+      <section className="py-32 bg-[#f3f7f5]">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto text-center"
