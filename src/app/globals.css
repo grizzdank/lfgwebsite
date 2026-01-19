@@ -53,6 +53,42 @@ body {
         word-break: break-word;
     }
 
+    /* Collapsible sections in blog posts */
+    .prose details {
+        @apply my-6 rounded-lg border border-[#e8eeeb] bg-[#f9fbfa];
+    }
+
+    .prose details summary {
+        @apply cursor-pointer px-4 py-3 font-semibold text-[#2c4a3c] select-none;
+        @apply hover:bg-[#f3f7f5] transition-colors rounded-lg;
+        @apply list-none; /* Remove default marker */
+    }
+
+    .prose details summary::-webkit-details-marker {
+        display: none; /* Remove default marker in Safari */
+    }
+
+    .prose details summary::before {
+        content: "▶";
+        @apply inline-block mr-2 text-sm text-[#dca47d] transition-transform duration-200;
+    }
+
+    .prose details[open] summary::before {
+        transform: rotate(90deg);
+    }
+
+    .prose details[open] summary {
+        @apply border-b border-[#e8eeeb] rounded-b-none;
+    }
+
+    .prose details > *:not(summary) {
+        @apply px-4;
+    }
+
+    .prose details > *:last-child {
+        @apply pb-4;
+    }
+
     /* Flip card for service pricing */
     .flip-card {
         perspective: 1000px;
