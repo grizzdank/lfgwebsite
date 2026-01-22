@@ -1,6 +1,6 @@
 ---
 title: "Centaur Health: How I Used AI to Analyze 643,000 Genetic Variants"
-excerpt: "I fed my raw 23andMe data to Claude Code and got back actionable health insights in under an hour. Here's how the human-AI partnership unlocked my genome."
+excerpt: "I fed my raw 23andMe data to Claude Code, compared it to my actual bloodwork, and walked into my doctor's appointment with a plan. Here's how the human-AI partnership turned 643k genetic variants into real medical action."
 publishedAt: "2026-01-22T12:00:00Z"
 category: "AI & Automation"
 tags: ["centaur", "AI health", "genomics", "23andMe", "Claude Code", "personal analytics"]
@@ -104,13 +104,49 @@ Here's the type of insight this approach produces (details redacted for privacy)
 
 | Category | Finding | Action |
 |----------|---------|--------|
-| **Longevity** | Favorable FOXO3 variants | Double down on fasting, zone 2 cardio |
-| **Metabolism** | Elevated diabetes markers | Limit refined carbs, track glucose |
+| **Longevity** | Favorable FOXO3 variants (centenarian-associated) | Double down on fasting, zone 2 cardio |
+| **Metabolism** | Elevated diabetes risk (TCF7L2, KCNJ11) | Limit refined carbs, monitor HbA1c |
 | **Cognitive** | "Warrior" COMT profile | Thrive under pressure; manage chronic stress |
-| **Nutrition** | Fast caffeine metabolizer | Coffee is cardioprotective for me |
-| **Athletic** | Mixed muscle fiber type | Suited for hybrid training, not pure endurance |
+| **Nutrition** | Fast caffeine metabolizer (CYP1A2) | Coffee is cardioprotective for me |
+| **Athletic** | Mixed muscle fiber type (ACTN3 CT) | Suited for hybrid training—CrossFit, climbing |
+| **LDL** | Multiple elevated variants (PCSK9, SORT1, APOB) | Aggressive lifestyle + medication if needed |
 
 Generic health advice says "exercise more" and "eat better." My genome says *which* exercise and *why* certain foods matter more for me specifically.
+
+## The Real Test: Genetics vs. Bloodwork
+
+Here's where it got interesting. I had my actual VA lab results sitting in another folder. So I asked the AI to compare predictions to reality.
+
+**Genetics predicted → Labs confirmed:**
+
+| Prediction | What Labs Showed |
+|------------|------------------|
+| Elevated LDL risk (multiple variants) | LDL: 167 mg/dL (HIGH) ✓ |
+| Vitamin D processing issues | Vitamin D: 20 ng/mL (insufficient) ✓ |
+
+The genetics weren't just theoretical—they explained my actual numbers.
+
+**But here's the twist:**
+
+My genetics also showed elevated Type 2 diabetes risk (TCF7L2 CT + KCNJ11 TT). Those variants predict reduced insulin secretion and carbohydrate intolerance.
+
+My HbA1c? **5.4%** — excellent.
+
+**Lifestyle was overriding genetics.** My diet and exercise patterns were compensating for genetic predisposition. The AI flagged this as "keep doing what you're doing, but don't get complacent."
+
+This is the centaur insight: genetics show the hand you're dealt, bloodwork shows how you're playing it.
+
+## From Analysis to Action
+
+The analysis didn't stay in a markdown file. I generated a summary for my VA doctor with specific questions:
+
+- Given my PCSK9 and APOB variants, should we consider more aggressive LDL targets?
+- My vitamin D has been low for years despite supplementation—genetic variants may explain why. Higher dose?
+- What additional markers should we track given my telomere gene profile?
+
+**Outcome:** Started atorvastatin for LDL. Prescribed high-dose vitamin D. Scheduled advanced lipid panel (ApoB, Lp(a)) for February.
+
+The AI provided the research synthesis. The doctor provided the medical judgment. I provided the decision to act. Centaur health in practice.
 
 ## What AI Can't Do
 
@@ -128,11 +164,12 @@ The centaur model requires honesty about AI limitations:
 
 This isn't about bypassing doctors or genetic counselors. It's about **preparation and access**:
 
-- **Democratized exploration**: Professional interpretation costs $300+. This took an hour.
-- **Personalized starting point**: I walked into my next doctor's appointment with specific questions, not vague concerns.
+- **Democratized exploration**: Professional genetic interpretation costs $300+. This took an hour.
+- **Validated predictions**: Comparing genetics to actual labs confirmed the analysis wasn't just theoretical.
+- **Better conversations**: I walked into my VA appointment with specific questions, not vague concerns. Left with a prescription and a monitoring plan.
 - **Accelerated understanding**: Research that would take weeks to compile was synthesized in minutes.
 
-The goal isn't to replace expertise—it's to show up more informed.
+The goal isn't to replace expertise—it's to show up more informed. My doctor didn't have to explain what PCSK9 variants are. We jumped straight to "given this profile, here's the plan."
 
 ## The Centaur Framework
 
