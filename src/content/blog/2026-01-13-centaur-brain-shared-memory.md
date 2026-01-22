@@ -14,7 +14,7 @@ Every conversation with an AI starts from scratch.
 
 You explain your project. Again. You provide context. Again. You remind it of decisions you made last week. Again.
 
-This "context loading tax" adds up. It's not just time—it's cognitive overhead. You're constantly managing what the AI knows instead of just working together.
+This "context loading tax" adds up. The cognitive overhead of managing what your AI knows eats into the time you should spend actually working together.
 
 I wanted something different: an AI that remembers. That knows my projects, my preferences, my active work. That I can drop into any conversation without setup.
 
@@ -55,7 +55,7 @@ The assistant has:
 - **Proactive behavior**: Heartbeat check-ins, autonomous processing
 - **Tool access**: Can SSH to machines, run commands, create files
 
-It's not waiting for me to ask. It's working alongside me.
+It works alongside me without waiting to be asked.
 
 ### 3. The Sync Layer: Git + Automation
 
@@ -158,7 +158,7 @@ I stayed in "capture mode" (low friction). The AI handled routing, formatting, a
 
 ### Collaborative Debugging
 
-Here's a messier example—one that shows the centaur effect in real debugging.
+A messier example, from a real debugging session:
 
 **The bug**: My \`launchd\` sweep script moved a note while I was actively editing it in Obsidian. When the file got committed, it was empty. Data loss.
 
@@ -189,7 +189,7 @@ if [[ \$(( \$(date +%s) - \$(stat -f %m "\$file") )) -lt 60 ]]; then
 fi
 \`\`\`
 
-This iterative refinement IS the centaur effect—human notices problem, AI diagnoses and fixes, human validates.
+Human notices problem. AI diagnoses and fixes. Human validates. Repeat.
 
 ### Delegating to Sub-Agents
 
@@ -215,7 +215,7 @@ in the current version. Report back.
 
 Total time: 2 minutes. I got a ping with the findings while doing other work.
 
-This is the centaur scaling up. I didn't just have one AI—I delegated to a specialist while the main assistant stayed available. The human provides the task and judges the result. The AI handles the investigation.
+I delegated to a specialist while the main assistant stayed available for other work. Two minutes later I had an answer I would have spent 30 minutes digging for myself.
 
 ### The Daily Rhythm
 
@@ -275,9 +275,7 @@ Without structure, the AI asks "where should I put this?" With structure, it jus
 
 ### 2. Proactive > Reactive
 
-The game-changer wasn't giving the AI access to my files. It was giving it a heartbeat—regular check-ins where it can act without being asked.
-
-Reactive AI waits for prompts. Proactive AI is a collaborator.
+File access was table stakes. The heartbeat made it useful. Regular check-ins mean the AI can act without being prompted, and I stopped losing ideas between conversations.
 
 ### 3. Git Is the Perfect Sync Layer
 
@@ -300,7 +298,7 @@ The system keeps evolving:
 - **Voice capture**: Transcribe voice memos, extract action items, route to the right project. Capture thoughts while driving.
 - **Graduating ideas**: From vault notes to project specs to shipped features, with the AI tracking the lifecycle.
 
-The centaur brain isn't a destination. It's a practice.
+The centaur brain keeps changing shape. That's the point.
 
 ## Build Your Own
 
@@ -317,7 +315,7 @@ Then iterate. The centaur brain grows with use.
 
 ---
 
-*The centaur doesn't replace the human or the horse. It combines them into something neither could be alone.*
+*I forget things. The AI can't decide what matters. Together we cover each other's blind spots.*
 
 ---
 

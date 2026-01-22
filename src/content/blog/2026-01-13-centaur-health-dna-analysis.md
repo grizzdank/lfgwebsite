@@ -56,16 +56,16 @@ Within seconds: file format identified, SNP count verified, data structure mappe
 
 ### Step 2: Start Specific, Not Broad
 
-Here's the key insight: don't ask "analyze everything." That's how you get overwhelmed with noise.
+Don't ask "analyze everything." That's how you get overwhelmed with noise.
 
-Instead, I started with what I actually cared about:
+I started with what I actually cared about:
 
 ```
 I have high LDL cholesterol. What variants in my data relate to 
 lipid metabolism, and what do they suggest?
 ```
 
-This is the centaur approach—**human provides direction, AI provides depth**.
+I pointed. It dug.
 
 The AI identified 13 relevant variants across PCSK9, APOB, LDLR, and APOE genes, then synthesized them into a risk profile with specific recommendations.
 
@@ -100,7 +100,7 @@ The result: risk scores visualized as gauges, traits organized by category, and 
 
 ## Sample Findings
 
-Here's the type of insight this approach produces:
+Some examples of what came back (privacy-filtered):
 
 | Category | Finding | Action |
 |----------|---------|--------|
@@ -115,7 +115,7 @@ Generic health advice says "exercise more" and "eat better." Genetic analysis sa
 
 ## The Real Test: Genetics vs. Bloodwork
 
-Here's where it got interesting. I had actual lab results sitting in another folder. So I asked the AI to compare predictions to reality.
+I had actual lab results sitting in another folder. So I asked the AI to compare predictions to reality.
 
 **Genetics predicted → Labs confirmed:**
 
@@ -126,9 +126,9 @@ Here's where it got interesting. I had actual lab results sitting in another fol
 
 The genetics weren't just theoretical—they explained my actual numbers.
 
-**But here's the twist:**
+**The surprise:**
 
-My genetics also showed elevated Type 2 diabetes risk. Multiple variants predict reduced insulin secretion and carbohydrate intolerance.
+My genetics also flagged elevated Type 2 diabetes risk. Multiple variants predict reduced insulin secretion and carbohydrate intolerance.
 
 My actual glucose markers? Excellent.
 
@@ -162,14 +162,14 @@ The centaur model requires honesty about AI limitations:
 
 ## Why This Matters
 
-This isn't about bypassing doctors or genetic counselors. It's about **preparation and access**:
+I still needed my doctor. But I showed up prepared:
 
-- **Democratized exploration**: Professional genetic interpretation costs $300+. This took an hour.
-- **Validated predictions**: Comparing genetics to actual labs confirmed the analysis wasn't just theoretical.
-- **Better conversations**: I walked into my doctor's appointment with specific questions, not vague concerns. Left with a treatment plan.
-- **Accelerated understanding**: Research that would take weeks to compile was synthesized in minutes.
+- Professional genetic interpretation costs $300+. This took an hour.
+- Comparing genetics to actual labs confirmed the analysis wasn't theoretical.
+- I walked into my appointment with specific questions, not vague concerns. Left with a treatment plan.
+- Research that would take weeks to compile was synthesized in minutes.
 
-The goal isn't to replace expertise—it's to show up more informed. My doctor didn't have to explain what PCSK9 variants are. We jumped straight to "given this profile, here's the plan."
+My doctor didn't have to explain what PCSK9 variants are. We jumped straight to "given this profile, here's the plan."
 
 ## The Centaur Framework
 
@@ -180,7 +180,7 @@ This approach works for any personal data analysis:
 3. **Human provides judgment** — What to act on, what to verify, what to ignore
 4. **Iterate together** — Refine questions based on initial findings
 
-Your genome. Your financial records. Your health metrics. Your career history. All of these benefit from the centaur approach: human judgment steering AI capability.
+Your genome. Your financial records. Your health metrics. Your career history. Same pattern: you ask the questions, AI does the grunt work, you decide what to do with the answers.
 
 ## Try It Yourself
 
