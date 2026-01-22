@@ -9,6 +9,7 @@ author:
   name: "Dave Graham"
   title: "Principal Consultant"
 ---
+![Terminal showing image generation in action](/blog/2026-01-08-building-image-gen-skill-for-claude-code/hero.webp)
 
 What if you could generate images without leaving your Claude Code session in terminal? No browser tabs, no context switching. Just ask Claude.
 
