@@ -49,7 +49,7 @@ Neither of us could have done this alone. I don't have the time to research 643k
 I pointed Claude Code at the raw file:
 
 ```
-Analyze genome_Dave_Graham_v5_Full.txt and tell me what we have.
+Analyze my_genome_data.txt and tell me what we have.
 ```
 
 Within seconds: file format identified, SNP count verified, data structure mapped. We had 643,161 markers to work with.
@@ -100,37 +100,37 @@ The result: risk scores visualized as gauges, traits organized by category, and 
 
 ## Sample Findings
 
-Here's the type of insight this approach produces (details redacted for privacy):
+Here's the type of insight this approach produces:
 
 | Category | Finding | Action |
 |----------|---------|--------|
-| **Longevity** | Favorable FOXO3 variants (centenarian-associated) | Double down on fasting, zone 2 cardio |
-| **Metabolism** | Elevated diabetes risk (TCF7L2, KCNJ11) | Limit refined carbs, monitor HbA1c |
-| **Cognitive** | "Warrior" COMT profile | Thrive under pressure; manage chronic stress |
-| **Nutrition** | Fast caffeine metabolizer (CYP1A2) | Coffee is cardioprotective for me |
-| **Athletic** | Mixed muscle fiber type (ACTN3 CT) | Suited for hybrid training—CrossFit, climbing |
-| **LDL** | Multiple elevated variants (PCSK9, SORT1, APOB) | Aggressive lifestyle + medication if needed |
+| **Longevity** | Favorable variants in longevity-associated genes | Double down on fasting, zone 2 cardio |
+| **Metabolism** | Elevated diabetes risk markers | Limit refined carbs, monitor glucose |
+| **Cognitive** | "Warrior" stress-response profile | Thrive under pressure; manage chronic stress |
+| **Nutrition** | Fast caffeine metabolizer | Coffee may be cardioprotective |
+| **Athletic** | Mixed muscle fiber type | Suited for hybrid training, not pure endurance |
+| **LDL** | Multiple variants affecting cholesterol clearance | Aggressive lifestyle intervention |
 
-Generic health advice says "exercise more" and "eat better." My genome says *which* exercise and *why* certain foods matter more for me specifically.
+Generic health advice says "exercise more" and "eat better." Genetic analysis says *which* exercise and *why* certain foods matter more for you specifically.
 
 ## The Real Test: Genetics vs. Bloodwork
 
-Here's where it got interesting. I had my actual VA lab results sitting in another folder. So I asked the AI to compare predictions to reality.
+Here's where it got interesting. I had actual lab results sitting in another folder. So I asked the AI to compare predictions to reality.
 
 **Genetics predicted → Labs confirmed:**
 
 | Prediction | What Labs Showed |
 |------------|------------------|
-| Elevated LDL risk (multiple variants) | LDL: 167 mg/dL (HIGH) ✓ |
-| Vitamin D processing issues | Vitamin D: 20 ng/mL (insufficient) ✓ |
+| Elevated LDL risk (multiple variants) | LDL flagged HIGH ✓ |
+| Vitamin D processing issues | Vitamin D insufficient ✓ |
 
 The genetics weren't just theoretical—they explained my actual numbers.
 
 **But here's the twist:**
 
-My genetics also showed elevated Type 2 diabetes risk (TCF7L2 CT + KCNJ11 TT). Those variants predict reduced insulin secretion and carbohydrate intolerance.
+My genetics also showed elevated Type 2 diabetes risk. Multiple variants predict reduced insulin secretion and carbohydrate intolerance.
 
-My HbA1c? **5.4%** — excellent.
+My actual glucose markers? Excellent.
 
 **Lifestyle was overriding genetics.** My diet and exercise patterns were compensating for genetic predisposition. The AI flagged this as "keep doing what you're doing, but don't get complacent."
 
@@ -138,13 +138,13 @@ This is the centaur insight: genetics show the hand you're dealt, bloodwork show
 
 ## From Analysis to Action
 
-The analysis didn't stay in a markdown file. I generated a summary for my VA doctor with specific questions:
+The analysis didn't stay in a markdown file. I generated a summary for my doctor with specific questions:
 
-- Given my PCSK9 and APOB variants, should we consider more aggressive LDL targets?
+- Given my lipid-related variants, should we consider more aggressive LDL targets?
 - My vitamin D has been low for years despite supplementation—genetic variants may explain why. Higher dose?
-- What additional markers should we track given my telomere gene profile?
+- What additional markers should we track given my genetic profile?
 
-**Outcome:** Started atorvastatin for LDL. Prescribed high-dose vitamin D. Scheduled advanced lipid panel (ApoB, Lp(a)) for February.
+**Outcome:** Started medication for LDL. Adjusted vitamin D dosing. Scheduled advanced lipid testing.
 
 The AI provided the research synthesis. The doctor provided the medical judgment. I provided the decision to act. Centaur health in practice.
 
@@ -166,7 +166,7 @@ This isn't about bypassing doctors or genetic counselors. It's about **preparati
 
 - **Democratized exploration**: Professional genetic interpretation costs $300+. This took an hour.
 - **Validated predictions**: Comparing genetics to actual labs confirmed the analysis wasn't just theoretical.
-- **Better conversations**: I walked into my VA appointment with specific questions, not vague concerns. Left with a prescription and a monitoring plan.
+- **Better conversations**: I walked into my doctor's appointment with specific questions, not vague concerns. Left with a treatment plan.
 - **Accelerated understanding**: Research that would take weeks to compile was synthesized in minutes.
 
 The goal isn't to replace expertise—it's to show up more informed. My doctor didn't have to explain what PCSK9 variants are. We jumped straight to "given this profile, here's the plan."
