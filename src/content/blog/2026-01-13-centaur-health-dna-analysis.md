@@ -14,7 +14,7 @@ That's what sat in my 23andMe raw data export—a zip file I'd downloaded years 
 
 The problem? Making sense of it requires expertise I don't have.
 
-Professional genetic interpretation services cost hundreds of dollars. DIY research would take weeks. So the file just sat there.
+Professional genetic interpretation services costs money and DIY research would take weeks. So the file just sat there.
 
 Then I tried something different: I turned it into a collaboration between human judgment and AI processing.
 
@@ -29,7 +29,7 @@ I wanted to test this with something personal: my genome.
 ## The Division of Labor
 
 **I brought:**
-- The questions that mattered to me (LDL cholesterol runs in my family)
+- The questions that mattered to me (persistently high LDL cholesterol in lab tests despite healthy lifestyle, potentially high from genetic factors)
 - Domain context (what areas to focus on, what to skip)
 - Judgment calls (what to act on vs. what to file away)
 - Privacy decisions (what stays private, what I share here)
