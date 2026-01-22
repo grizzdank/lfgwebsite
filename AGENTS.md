@@ -4,6 +4,12 @@
 
 When producing blog posts, copy, or any public-facing content, actively avoid patterns that signal AI-generated text. These tells make content feel generic and undermine credibility.
 
+### Structural Tells (from original rules)
+
+- **No "It's not X, it's Y" constructions** — e.g., "It's not a technology problem, it's an organizational problem." Rephrase or restructure.
+- **Limit em dashes** — Use sparingly. Prefer periods, commas, or parentheses. One per paragraph max.
+- **No "Here's the thing" or "Let's be clear"** — Filler that signals AI.
+
 ### Words & Phrases to Avoid
 
 **Significance/Legacy puffery:**
