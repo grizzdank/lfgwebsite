@@ -91,7 +91,7 @@ AI writing regresses to the mean—generic, positive-sounding filler that could 
 ## Repo Structure
 
 ```
-src/content/blog/     # Blog posts (MDX)
+src/content/blog/     # Blog posts (drafts .md, posts .mdx)
 src/content/services/ # Service pages
 public/               # Static assets
 ```
