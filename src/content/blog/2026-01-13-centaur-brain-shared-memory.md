@@ -1,10 +1,10 @@
 ---
 title: "Building a Centaur Brain: How My AI and I Share a Memory"
 excerpt: "I built a system where my AI assistant and I share a persistent memory layer. Here's the architecture, the workflow, and why it's changing how I work."
-publishedAt: "2026-01-13T14:00:00Z"
+publishedAt: "2026-01-24T12:00:00Z"
 category: "AI & Automation"
 tags: ["centaur", "AI productivity", "Obsidian", "knowledge management", "Clawdbot", "automation"]
-featured: false
+featured: true
 draft: true
 ---
 
@@ -65,6 +65,8 @@ The vault syncs across devices via Git:
 - **Poza** (Linux server): AI processing hub
 
 A \`launchd\` job on Mac sweeps new files to \`inbox/\` and pushes to GitHub every 5 minutes. The AI pulls changes on its heartbeat cycle and can push updates back.
+
+A nightly cron job (3am, while I sleep) commits and pushes any uncommitted changes from the workspace. No more "did I push that?" anxiety. The centaur brain backs itself up.
 
 [TODO: Architecture diagram]
 
@@ -189,6 +191,58 @@ fi
 
 This iterative refinement IS the centaur effect—human notices problem, AI diagnoses and fixes, human validates.
 
+### Delegating to Sub-Agents
+
+The centaur brain can spawn helpers.
+
+I had a bug report in my backlog: "Clawdbot statusline shows wrong model after fallback." I'd drafted an issue and a PR fix weeks ago, but wasn't sure if it had been fixed in a recent release.
+
+Instead of investigating myself, I asked Pulpito to spawn a sub-agent:
+
+\`\`\`
+Spawn a codex sub-agent to investigate the statusline bug. 
+Check ~/pulpito/drafts/ for context, see if it's still reproducible 
+in the current version. Report back.
+\`\`\`
+
+**What happened:**
+
+1. Pulpito spawned a separate AI session (using a different model optimized for code tasks)
+2. The sub-agent searched my drafts, found the issue description
+3. Inspected the installed Clawdbot source code
+4. Found the exact fix I'd proposed was already merged
+5. Reported back: "Bug fixed in 2026.1.21. You can archive those drafts."
+
+Total time: 2 minutes. I got a ping with the findings while doing other work.
+
+This is the centaur scaling up. I didn't just have one AI—I delegated to a specialist while the main assistant stayed available. The human provides the task and judges the result. The AI handles the investigation.
+
+### The Daily Rhythm
+
+The centaur brain has a heartbeat—literally.
+
+Every 30 minutes during waking hours, Pulpito checks in. Most heartbeats are quiet (\`HEARTBEAT_OK\`). But twice a day, scheduled reviews trigger real work:
+
+**Morning (5:30am):** Review yesterday's notes, update today's priorities, promote patterns to long-term memory. By the time I wake up at 6am, my daily plan is ready.
+
+**Evening (11:30pm):** Capture what happened today, update completed items, prep tomorrow. The AI processes while I sleep.
+
+I don't have to remember to do daily reviews. The system does them. I just validate the output.
+
+\`\`\`markdown
+# HEARTBEAT.md (excerpt)
+## Today (Jan 22 - Wednesday)
+### Must Do
+1. Submit Upwork API request (time-gated)
+2. Enable Google Calendar API
+3. PromptBase 2-hour experiment
+
+### Waiting On
+- SAM.gov renewal (submitted Jan 15)
+\`\`\`
+
+The AI maintains this file. I steer it.
+
 ## Why This Works
 
 ### Human Strengths
@@ -241,9 +295,10 @@ Start supervised. Graduate to autonomous.
 
 The system keeps evolving:
 
-- **Voice interface**: Capture via voice memo, transcribe, process
-- **More autonomous processing**: Auto-categorization, deadline extraction, project assignment
-- **Graduating ideas**: From vault notes to project specs to shipped features
+- **Semantic memory search**: The AI can now search past conversations and extracted learnings, not just current files. "What did we decide about X last month?" just works.
+- **Multi-agent workflows**: Spawn specialized sub-agents for research, coding, or analysis—then synthesize their outputs. One human, multiple AI collaborators.
+- **Voice capture**: Transcribe voice memos, extract action items, route to the right project. Capture thoughts while driving.
+- **Graduating ideas**: From vault notes to project specs to shipped features, with the AI tracking the lifecycle.
 
 The centaur brain isn't a destination. It's a practice.
 
