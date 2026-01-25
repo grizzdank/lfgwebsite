@@ -320,3 +320,55 @@ Then iterate. The centaur brain grows with use.
 ---
 
 **Want help building a centaur system for your team?** [Let's talk](https://lfgconsultants.com/contact).
+
+---
+
+<!-- 
+## THOUGHT PROMPTS FOR EXPANSION / SERIES
+
+### Skills in the Agent Era (Series Post #2?)
+Source: research-vault inbox note 2026-01-25
+
+Core thesis: Execution is now cheap (albeit buggy). "What to build" is the scarce resource.
+
+Questions to explore:
+- What skills become MORE valuable when agents can execute?
+- What skills become LESS valuable (commoditized)?
+- Is "prompt engineering" already dead? What replaced it?
+
+**Two Modes of Operation:**
+1. Agent Manager — hands-on, directing work, in the loop
+2. Enterprise Operator — setting strategy, agents run autonomously
+
+When do you use each mode? Can you switch fluidly?
+
+**The New Stack of Human Value:**
+1. Taste — knowing what to build (judgment, vision)
+2. Scoping — breaking it down into agent-sized chunks  
+3. Architecture — system design agents can execute against
+4. QA/Integration — catching bugs, stitching together, quality bar
+
+**Planning → Async Building:**
+- How does planning change when execution is ~free?
+- Is "vibe coding" the new planning? (iterate fast, throw away cheap)
+
+### System Thinking as AI Differentiator (Series Post #3?)
+Source: Meta-observation from lazy prompting 2026-01-25
+
+Core insight: The benefit people get from AI correlates with their system thinking ability.
+
+Lazy prompt → AI interprets broadly → creates something useful BUT not what was intended → sparks new idea anyway
+
+Questions:
+- Why do some people 10x with AI while others struggle?
+- Is it about prompting skill, or about how you structure your work/thinking?
+- System thinkers can architect for AI autonomy (structure enables autonomy)
+- Non-system thinkers keep hitting walls (need to re-explain everything)
+
+This connects to the folder lifecycle insight: structure isn't just organization—it's a protocol. People without that mental model can't leverage AI the same way.
+
+**Possible angles:**
+- "Why your AI assistant isn't working (and it's not the AI's fault)"
+- "The hidden skill that determines AI ROI"
+- Teaching system thinking as AI enablement
+-->
