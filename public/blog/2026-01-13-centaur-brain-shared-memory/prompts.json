@@ -1,0 +1,6 @@
+[
+  {
+    "prompt": "Clean minimal tech infographic. Title 'CENTAUR BRAIN' at top in bold dark gray.\n\nCenter: happy smiling pink octopus mascot in white circle, labeled 'Pulpito' below. The octopus should look friendly and confident, not worried.\n\nFive pastel rounded rectangles connected to center with thin gray lines:\n\nTOP LEFT - cyan gradient box labeled 'INPUTS': Signal, WhatsApp, CLI, cron heartbeats (with small icons)\n\nTOP CENTER - coral/peach gradient box labeled 'MEMORY': HEARTBEAT.md, research-vault, AGENTS.md, Profundo (with document icons)\n\nTOP RIGHT - mint green gradient box labeled 'SYNC': Git, GitHub, launchd, SSH (with small icons)\n\nBOTTOM LEFT - lavender gradient box labeled 'TOOLS': shell commands, MCP servers (with terminal icons)\n\nBOTTOM RIGHT - teal gradient box labeled 'OUTPUTS': messages, code commits, file writes, notifications (with small icons)\n\nBOTTOM CENTER - light blue box showing 'NODES': MacBook (OndaLaptop), Linux server (Poza) with laptop and server icons\n\nStyle: Modern SaaS infographic, soft shadows, off-white background, clean sans-serif font, highly readable text, no typos.",
+    "file": "001-clean-minimal-tech-infographic-title-cen.png"
+  }
+]
