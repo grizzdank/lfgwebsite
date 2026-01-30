@@ -1,11 +1,11 @@
 ---
 title: "Building a Centaur Brain: How My AI and I Share a Memory"
 excerpt: "I built a system where my AI assistant and I share a persistent memory layer. Here's the architecture, the workflow, and why it's changing how I work."
-publishedAt: "2026-01-24T12:00:00Z"
+publishedAt: "2026-01-30T12:00:00Z"
 category: "AI & Automation"
-tags: ["centaur", "AI productivity", "Obsidian", "knowledge management", "Clawdbot", "automation"]
+tags: ["centaur", "AI productivity", "Obsidian", "knowledge management", "Clawdbot", "automation", "Openclaw", "Moltbot"]
 featured: true
-draft: true
+draft: false
 ---
 
 ## The Problem with AI Assistants
@@ -14,9 +14,9 @@ Every conversation with an AI starts from scratch.
 
 You explain your project. Again. You provide context. Again. You remind it of decisions you made last week. Again.
 
-This "context loading tax" adds up. The cognitive overhead of managing what your AI knows eats into the time you should spend actually working together.
+This cognitive tax adds up, the overhead of managing what your AI knows eats into the time you should spend actually working together.
 
-I wanted something different: an AI that remembers. That knows my projects, my preferences, my active work. That I can drop into any conversation without setup.
+I wanted something different. I wanted an AI system that remembers; that knows my projects, my preferences, my active work. That I can drop into any conversation without setup.
 
 So I built a centaur brain.
 
@@ -24,7 +24,7 @@ So I built a centaur brain.
 
 In chess, "centaur" teams—human plus AI working together—consistently beat both pure humans and pure AI. The human provides intuition, creativity, and judgment. The AI provides calculation, pattern recognition, and tireless consistency.
 
-The term comes from the mythical creature: human mind, horse body. Neither alone. Both together.
+The term comes from the mythical creature: human mind, horse body. Better together, complementing each other.
 
 I wanted that for knowledge work.
 
@@ -36,24 +36,25 @@ The system has three components:
 
 An Obsidian vault serves as the shared memory layer. It's just markdown files in folders—nothing proprietary.
 
-\`\`\`
+```
 research-vault/
 ├── inbox/          # Raw captures, unsorted
 ├── exploring/      # Ideas being developed
 ├── ready/          # Refined, ready to use
 └── parked/         # On hold, not forgotten
-\`\`\`
+```
 
-Ideas flow through this lifecycle. A shower thought enters \`inbox/\`. If it has legs, it graduates to \`exploring/\`. When it's actionable, it moves to \`ready/\`. If priorities shift, it goes to \`parked/\`—not deleted, just waiting.
+Ideas flow through this lifecycle. A shower thought enters `inbox/`. If it has legs, it graduates to `exploring/`. When it's actionable, it moves to `ready/`. If priorities shift, it goes to `parked/`—not deleted, just waiting.
 
 ### 2. The AI Interface: Pulpito
 
-Pulpito is my AI assistant running on [Clawdbot](https://clawd.bot). It's always on, connected via Signal and WhatsApp, and—crucially—it can read and write to the vault.
+Pulpito is my instance of [Openclaw](https://openclaw.ai/)—I started using it before it blew up and went through 3 name changes in a week (100K+ GitHub stars in days; wild story, huge respect to [Peter Steinberger](https://github.com/steipete) for navigating it). It's always on, connected via Signal and WhatsApp, and it can read and write to the vault. Pulpito lives on Poza, its own tidepool (a dedicated, always-on Linux laptop). I'll deep dive how Pulpito is structured in a future post.
 
 The assistant has:
-- **Persistent context**: Project files, preferences, active work
-- **Proactive behavior**: Heartbeat check-ins, autonomous processing
-- **Tool access**: Can SSH to machines, run commands, create files
+- **Persistent context**: Project files, preferences, active work.
+- **Memory**: Two layers; Pulpito's built-in markdown memory (curated facts, preferences) and [Profundo](https://github.com/grizzdank/profundo), my CLI tool for semantic search and insight extraction from conversation history.
+- **Proactive behavior**: Heartbeat check-ins, autonomous processing.
+- **Tool access**: Can SSH to the other machines on my tailnet, run commands, edit and create files, and anything else I give it permissions to do.
 
 It works alongside me without waiting to be asked.
 
@@ -64,70 +65,11 @@ The vault syncs across devices via Git:
 - **iPhone**: Mobile capture via Obsidian app
 - **Poza** (Linux server): AI processing hub
 
-A \`launchd\` job on Mac sweeps new files to \`inbox/\` and pushes to GitHub every 5 minutes. The AI pulls changes on its heartbeat cycle and can push updates back.
+A `launchd` job on Mac sweeps new files to `inbox/` and pushes to GitHub every 5 minutes. The AI pulls changes on its heartbeat cycle and can push updates back.
 
 A nightly cron job (3am, while I sleep) commits and pushes any uncommitted changes from the workspace. No more "did I push that?" anxiety. The centaur brain backs itself up.
 
-[TODO: Architecture diagram]
-
-<!-- INFOGRAPHIC PROMPT (for openai-image-gen skill)
-
-**Style Reference:** "Pokey" Clawdbot infographic - clean hub-and-spoke architecture diagram. 
-Soft gradients, rounded corners, drop shadows. Friendly tech-startup aesthetic.
-
-**Layout:** Hub-and-spoke with central gateway, radial sections
-
-**Center:** 
-- "Pulpito" with cute octopus mascot (🐙)
-- Subtitle: "Clawdbot Gateway"
-
-**Left Section (INPUTS - cyan/teal gradient):**
-- Signal (primary messaging) 
-- WhatsApp
-- CLI terminal
-- Cron heartbeats (scheduled pulses)
-
-**Top Section (MEMORY LAYER - coral/peach gradient):**
-- HEARTBEAT.md (daily state)
-- research-vault/ (Obsidian)
-- memory/*.md (durable facts)
-- AGENTS.md / SOUL.md (personality & rules)
-
-**Top-Right Section (SYNC - green/teal gradient):**
-- Git (version control)
-- GitHub (remote)
-- launchd (Mac automation)
-- SSH tunnels
-
-**Right Section (OUTPUTS - teal):**
-- Messages (Signal/WhatsApp replies)
-- Code commits
-- File writes
-- Notifications
-
-**Bottom Section (TOOLS - purple/lavender gradient):**
-- Browser automation
-- exec (shell commands)
-- MCP servers
-- OndaLaptop node (MacBook)
-- Poza (Linux gateway server)
-
-**Flow Arrows:**
-- Ideas captured on phone → inbox → AI processes → GitHub issues
-- Heartbeat cycle: pull vault → process → push updates
-- Human judgment ←→ AI execution (centaur loop)
-
-**Color Scheme:**
-- Background: Off-white (#F5F7FA)
-- Text: Dark gray (not pure black)
-- Connection lines: Cyan/teal (#4ECDC4)
-- Section backgrounds: Soft gradients matching category colors
-
-**Typography:** Clean sans-serif, section headers bold
-
-**Note:** Include small icons for each tool/integration. Keep readable at blog width (~800px).
-
--->
+![Centaur Brain Architecture - Hub and spoke diagram showing Pulpito at the center connected to Memory (HEARTBEAT.md, research-vault, AGENTS.md, Profundo), Inputs (Signal, WhatsApp, CLI, cron), Sync (Git, GitHub, launchd, SSH), Tools (Skills, shell commands, MCP servers), Nodes (MacBook, Linux server), and Outputs (Messages, Code commits, File writes, Notifications)](/blog/2026-01-13-centaur-brain-shared-memory/centaur-brain.webp)
 
 ## The Workflow in Practice
 
@@ -137,15 +79,15 @@ Sunday morning. I'm at my son's soccer game. A feature idea pops into my head fo
 
 I pull out my phone. Open Obsidian. Type:
 
-\`\`\`
+```
 Be able to make task recurring when creating new task
-\`\`\`
+```
 
 That's it. Back to watching soccer.
 
 **What happened next (no human intervention):**
 
-1. \`launchd\` swept the note to \`inbox/\` (5-minute cycle)
+1. `launchd` swept the note to `inbox/` (5-minute cycle)
 2. Git pushed to GitHub
 3. Pulpito's heartbeat pulled the vault (30-minute cycle)
 4. AI recognized it as a feature request for a specific project
@@ -160,7 +102,7 @@ I stayed in "capture mode" (low friction). The AI handled routing, formatting, a
 
 A messier example, from a real debugging session:
 
-**The bug**: My \`launchd\` sweep script moved a note while I was actively editing it in Obsidian. When the file got committed, it was empty. Data loss.
+**The bug**: My `launchd` sweep script moved a note while I was actively editing it in Obsidian. When the file got committed, it was empty. Data loss.
 
 **The debug session**:
 
@@ -171,7 +113,7 @@ The AI:
 2. Checked git history for the vault
 3. Found the empty file commit
 4. Traced back to find when content existed
-5. Identified the race condition: Obsidian was mid-autosave when the script ran \`git add\`
+5. Identified the race condition: Obsidian was mid-autosave when the script ran `git add`
 6. Proposed a fix: Check file modification time, skip files touched in the last 60 seconds
 7. Updated the script
 8. Recovered the lost content from git reflog
@@ -180,14 +122,14 @@ One conversation. Problem identified, diagnosed, fixed, and content recovered.
 
 I noticed the problem. The AI did the forensics and surgery. Neither of us could have done it as fast alone.
 
-**The fix** (now in \`watch-vault.sh\`):
+**The fix** (now in `watch-vault.sh`):
 
-\`\`\`bash
+```bash
 # Skip files modified in last 60 seconds (being actively edited)
-if [[ \$(( \$(date +%s) - \$(stat -f %m "\$file") )) -lt 60 ]]; then
+if [[ $(( $(date +%s) - $(stat -f %m "$file") )) -lt 60 ]]; then
     continue
 fi
-\`\`\`
+```
 
 Human notices problem. AI diagnoses and fixes. Human validates. Repeat.
 
@@ -199,11 +141,11 @@ I had a bug report in my backlog: "Clawdbot statusline shows wrong model after f
 
 Instead of investigating myself, I asked Pulpito to spawn a sub-agent:
 
-\`\`\`
+```
 Spawn a codex sub-agent to investigate the statusline bug. 
 Check ~/pulpito/drafts/ for context, see if it's still reproducible 
 in the current version. Report back.
-\`\`\`
+```
 
 **What happened:**
 
@@ -221,7 +163,7 @@ I delegated to a specialist while the main assistant stayed available for other 
 
 The centaur brain has a heartbeat—literally.
 
-Every 30 minutes during waking hours, Pulpito checks in. Most heartbeats are quiet (\`HEARTBEAT_OK\`). But twice a day, scheduled reviews trigger real work:
+Every 30 minutes during waking hours, Pulpito checks in. Most heartbeats are quiet (`HEARTBEAT_OK`). But twice a day, scheduled reviews trigger real work:
 
 **Morning (5:30am):** Review yesterday's notes, update today's priorities, promote patterns to long-term memory. By the time I wake up at 6am, my daily plan is ready.
 
@@ -229,19 +171,19 @@ Every 30 minutes during waking hours, Pulpito checks in. Most heartbeats are qui
 
 I don't have to remember to do daily reviews. The system does them. I just validate the output.
 
-\`\`\`markdown
+```markdown
 # HEARTBEAT.md (excerpt)
 ## Today (Jan 22 - Wednesday)
 ### Must Do
-1. Submit Upwork API request (time-gated)
-2. Enable Google Calendar API
-3. PromptBase 2-hour experiment
+1. Review RFP
+2. Respond to client email
+3. Conduct OSS LLM model head-to-head experiment
 
 ### Waiting On
 - SAM.gov renewal (submitted Jan 15)
-\`\`\`
+```
 
-The AI maintains this file. I steer it.
+The AI maintains this file and I steer it.
 
 ## Why This Works
 
@@ -269,7 +211,7 @@ The AI extends my working memory. I extend its judgment.
 
 ### 1. Structure Enables Autonomy
 
-The folder lifecycle (\`inbox\` → \`exploring\` → \`ready\` → \`parked\`) isn't just organization—it's a protocol. The AI knows what each folder means and can make decisions accordingly.
+The folder lifecycle (`inbox` → `exploring` → `ready` → `parked`) isn't just organization—it's a protocol. The AI knows what each folder means and can make decisions accordingly.
 
 Without structure, the AI asks "where should I put this?" With structure, it just knows.
 
@@ -305,7 +247,7 @@ The centaur brain keeps changing shape. That's the point.
 Want to try this yourself? The core components are:
 
 1. **A vault**: Obsidian, Notion, or even plain markdown files
-2. **An AI with access**: Claude with file access, or a tool like Clawdbot
+2. **An AI with access**: Claude with file access, or a tool like Openclaw
 3. **A sync mechanism**: Git, iCloud, Dropbox—whatever works
 4. **A capture flow**: Make it easy to get ideas in
 
