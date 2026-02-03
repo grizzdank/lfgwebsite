@@ -6,9 +6,15 @@ category: "AI & Automation"
 tags: ["AI", "learning", "skill development", "productivity", "knowledge work"]
 featured: true
 draft: true
+series: "LLM Mastery: Field Notes"
+seriesOrder: 1
 author:
   name: "Dave Graham"
   title: "Principal Consultant"
+---
+
+*This is the first post in a series documenting my journey through a 6-month LLM mastery curriculum. Not a listicle of "10 projects you should do" — but actual field notes from doing them. The wins, the failures, the "oh shit" moments. Follow along or learn from my mistakes.*
+
 ---
 
 There's a dark side to AI assistance that nobody wants to talk about: it can make you dumber.
@@ -142,9 +148,34 @@ The centaur that stops exercising its human half isn't a centaur anymore. It's j
 
 ---
 
+## What's Next: The Curriculum
+
+This post is the manifesto. Now comes the work.
+
+I've built a 6-month curriculum merging Ilya Sutskever's foundational papers (the list he gave John Carmack) with modern LLM research and hands-on projects. Each month: read the papers, build the thing, write up what I learned.
+
+**Coming up in this series:**
+
+- **Month 1:** Attention from scratch — building character-level models, visualizing what transformers actually see
+- **Month 2:** Transformer internals — LayerNorm, RoPE, the stuff that makes modern LLMs tick
+- **Month 3:** Scaling laws — training tiny models, plotting loss curves, understanding Chinchilla
+- **Month 4:** Mixture of Experts — why sparse models win, building a router from scratch
+- **Month 5:** Alignment — RLHF, DPO, chain-of-thought, building a ReAct agent
+- **Month 6:** RAG, quantization, and deployment — from research to production
+
+Plus ongoing experiments: my AI health analysis (what happens when you feed your DNA to Claude), building a digital chief of staff, and whatever rabbit holes I fall into along the way.
+
+Each post will include what I tried, what actually happened, and what I'd do differently. No polished success stories — just field notes from someone learning in public.
+
+**[Subscribe](https://lfgconsultants.com/subscribe) to follow along.**
+
+---
+
 **References:**
 - Shen, K. & Tamkin, A. (2026). "How AI Impacts Skill Formation." Anthropic Research.
 - Mollick, E. "Management as AI Superpower." One Useful Thing.
+- Sutskever, I. "30 Papers for John Carmack." (Reading list)
+- Osman, A. "Top 26 Essential Papers for Mastering LLMs." (Jan 2025)
 
 ---
 
