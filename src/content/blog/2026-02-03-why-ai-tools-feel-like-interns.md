@@ -1,7 +1,7 @@
 ---
 title: "Why Your AI Tools Feel Like Managing an Intern"
-excerpt: "Most companies blame the model when AI requires constant supervision. The real bottleneck is a two-sided problem: whether your people are ready to work with AI, and whether your organization is set up to support it."
-publishedAt: "2026-02-03T12:00:00Z"
+excerpt: "When AI requires constant supervision, the model is rarely the bottleneck. Your people and your processes are."
+publishedAt: "2026-02-17T10:00:00Z"
 category: "AI & Automation"
 tags: ["AI adoption", "business process", "automation", "productivity", "documentation", "agent readiness"]
 featured: false
@@ -10,15 +10,12 @@ author:
   name: "Dave Graham"
   title: "Principal Consultant"
 ---
-# Why Your AI Tools Feel Like Managing an Intern
-
-*And how to figure out if the problem is the AI or your business*
 
 Most companies using AI are having the same experience: it's helpful, sort of, but requires constant supervision. You ask ChatGPT to draft an email, then spend ten minutes fixing it. You automate a report, but the output needs so much hand-holding you wonder if you should've done it yourself.
 
 The common assumption: the AI isn't good enough yet. Wait for GPT-6, or Claude 5, or whatever's next.
 
-Here's what we've learned: **the model is rarely the bottleneck. It's the readiness of your people and the maturity of your processes.**
+What we keep seeing instead: **the model is rarely the bottleneck. It's the readiness of your people and the maturity of your processes.**
 
 ## The Two-Sided Problem
 
@@ -37,9 +34,9 @@ Watch how people actually use AI, and a pattern emerges:
 
 **Level 1: Search replacement.** You use ChatGPT like a smarter Google. Summarize this. Explain that. Draft something. Useful, but barely scratching the surface. This is where most professionals are.
 
-**Level 2: Custom prompts with training wheels.** You've built a few GPTs or saved prompts for recurring tasks. But you're still babysitting — confirming every step, fixing every output. This is the "managing an intern" stage.
+**Level 2: Custom prompts with training wheels.** You've built a few GPTs or saved prompts for recurring tasks. But you're still babysitting, confirming every step, fixing every output. This is the "managing an intern" stage.
 
-**Level 3: Autonomous task execution.** The AI handles defined jobs without asking permission. Research, analysis, report generation — it runs, you review the output. Human-in-the-loop, but the loop is at the end, not every step.
+**Level 3: Autonomous task execution.** The AI handles defined jobs without asking permission. Research, analysis, report generation. It runs, you review the output. Human-in-the-loop, but the loop is at the end, not every step.
 
 **Level 4: AI as operating system.** You work primarily through AI interfaces. Claude Code for development, agents for research, automated workflows for operations. You allocate tasks to AI the way a manager delegates to a team.
 
@@ -61,11 +58,11 @@ When processes live in Slack threads and tribal knowledge, AI has nothing to lea
 
 ## The Documentation Test
 
-Here's a question that predicts whether a task can be automated:
+One question predicts whether a task can be automated:
 
 **"Could you write instructions detailed enough for a stranger to do this job?"**
 
-If yes, an AI can probably do it. If the answer is "well, it depends" or "you kind of have to know..." — that's a human task, at least for now.
+If yes, an AI can probably do it. If the answer is "well, it depends" or "you kind of have to know..." then that's a human task, at least for now.
 
 The companies that get the most from AI share one trait: their processes are written down. Not because they planned for AI, but because documented businesses run better with or without automation.
 
@@ -101,12 +98,4 @@ Before you upgrade your AI subscription, ask: **Is your business ready for the A
 
 ---
 
-## Find Out Where You Stand
-
-We offer a half-day Agent Readiness Assessment that scores both sides of the equation — your people and your organization. You'll walk away with:
-
-- A clear picture of where you're blocked
-- Prioritized roadmap for getting unstuck
-- Quick wins you can implement immediately
-
-[Book a Readiness Assessment →](/contact)
+We run a half-day [Agent Readiness Assessment](/schedule) that scores both sides of the equation, your people and your organization. You walk away with a clear picture of where you're blocked, a prioritized roadmap, and quick wins you can implement that week.

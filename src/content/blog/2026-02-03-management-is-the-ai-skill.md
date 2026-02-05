@@ -1,14 +1,17 @@
 ---
 title: "Management Is the AI Skill"
-description: "The best AI users aren't prompt engineers. They're good managers."
-date: "2026-02-03"
+excerpt: "The best AI users aren't prompt engineers. They're good managers."
+publishedAt: "2026-02-12T10:00:00Z"
+category: "AI & Automation"
+tags: ["ai", "management", "consulting", "AI adoption"]
+featured: false
 draft: true
-tags: ["ai", "management", "consulting"]
+author:
+  name: "Dave Graham"
+  title: "Principal Consultant"
 ---
 
-# Management Is the AI Skill
-
-Ethan Mollick ran an experiment at Wharton: MBA students with no coding experience had to build working startup prototypes in four days using Claude Code and other AI tools. Most had never written a line of code.
+[Ethan Mollick](https://www.oneusefulthing.org/p/management-as-ai-superpower) ran an experiment at Wharton: MBA students with no coding experience had to build working startup prototypes in [four days](https://x.com/emollick/status/2011523783467958585) using Claude Code and other AI tools. Most had never written a line of code.
 
 They got further in four days than previous cohorts got in a full semester.
 
@@ -27,7 +30,7 @@ Three variables:
 
 A seven-hour task with 72% AI success rate and one hour to evaluate? You save three hours on average. The math works even when the AI fails sometimes, because the wins more than cover the losses.
 
-But here's where it gets interesting: you can shift that equation by getting better at delegation.
+You can shift that equation by getting better at delegation.
 
 ## Your SOPs Are Already Prompts
 
@@ -46,7 +49,7 @@ If you already know how to write a clear spec, brief, or scope document, you alr
 
 ## The Evaluation Problem
 
-Here's the part Mollick glosses over: his framework assumes you can evaluate AI output.
+Mollick's framework assumes you can evaluate AI output.
 
 Many people can't.
 
@@ -54,7 +57,7 @@ AI produces work that looks competent. Proper formatting, confident tone, reason
 
 The danger isn't that AI produces bad work. It's that bad work looks exactly like good work to someone who can't tell the difference.
 
-This is where subject matter expertise becomes essential, not optional. The expert knows what instructions to give, sees when something's wrong, and knows how to fix it. Without that, you're just accepting whatever the AI generates and hoping.
+This is where subject matter expertise becomes non-negotiable. The expert knows what instructions to give, sees when something's wrong, and knows how to fix it. Without that, you're just accepting whatever the AI generates and hoping.
 
 ## What This Means for Organizations
 
@@ -80,6 +83,4 @@ AI doesn't replace these people. It routes around them. Their colleagues with cl
 
 The question isn't whether you should learn AI tools. It's whether you've learned to manage. Because that's the skill that actually compounds.
 
----
-
-*Dave Graham is the founder of LFG Consulting, where he helps organizations become AI-ready. He spent 21 years in Air Force Special Operations before transitioning to technology consulting.*
+If your organization has the management talent but can't figure out where AI fits, [let's talk](/schedule). The gap is usually smaller than you think.
