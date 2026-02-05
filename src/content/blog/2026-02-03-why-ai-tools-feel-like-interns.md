@@ -1,70 +1,91 @@
+---
+title: "Why Your AI Tools Feel Like Managing an Intern"
+excerpt: "Most companies blame the model when AI requires constant supervision. The real bottleneck is a two-sided problem: whether your people are ready to work with AI, and whether your organization is set up to support it."
+publishedAt: "2026-02-03T12:00:00Z"
+category: "AI & Automation"
+tags: ["AI adoption", "business process", "automation", "productivity", "documentation", "agent readiness"]
+featured: false
+draft: true
+author:
+  name: "Dave Graham"
+  title: "Principal Consultant"
+---
 # Why Your AI Tools Feel Like Managing an Intern
 
 *And how to figure out if the problem is the AI or your business*
 
----
+Most companies using AI are having the same experience: it's helpful, sort of, but requires constant supervision. You ask ChatGPT to draft an email, then spend ten minutes fixing it. You automate a report, but the output needs so much hand-holding you wonder if you should've done it yourself.
 
-Most companies using AI right now are having the same experience: it's helpful, sort of, but requires constant supervision. You ask ChatGPT to draft an email, then spend 10 minutes fixing it. You try to automate a report, but the output needs so much hand-holding you wonder if you should've just done it yourself.
+The common assumption: the AI isn't good enough yet. Wait for GPT-6, or Claude 5, or whatever's next.
 
-The common assumption: the AI isn't good enough yet. Wait for GPT-5, or Claude 4, or whatever's next.
+Here's what we've learned: **the model is rarely the bottleneck. It's the readiness of your people and the maturity of your processes.**
 
-But here's what we've learned working with small businesses on AI adoption: **the model is rarely the bottleneck. Your environment is.**
+## The Two-Sided Problem
 
-## The Four Levels of AI Usage
+Agent success requires both ready people and a ready organization. Most companies only think about one side.
 
-Watch how people actually use AI tools, and you'll see a pattern:
+|                       | People NOT Ready | People Ready |
+|-----------------------|------------------|--------------|
+| **Org NOT Ready**     | Chaos — AI tools sit unused or misused | Frustration — skilled users, broken systems |
+| **Org Ready**         | Waste — great infrastructure, no adoption | Compounding returns |
 
-**Level 1: Search replacement.** You use ChatGPT like a smarter Google. Summarize this. Explain that. Draft something. It's useful, but you're barely scratching the surface. This is where most professionals are.
+The gap we see over and over: L1 people wanting L4 results, inside L2 organizations, blaming the AI.
 
-**Level 2: Custom prompts with training wheels.** You've built a few GPTs or saved prompts for recurring tasks. But you're still babysitting — confirming every step, fixing every output. It feels like managing a junior hire who needs constant direction.
+## People Readiness: The Four Levels
 
-**Level 3: Autonomous task execution.** The AI handles defined jobs without asking permission. Research, analysis, report generation — it runs, you review the output. Still human-in-the-loop, but the loop is at the end, not every step.
+Watch how people actually use AI, and a pattern emerges:
 
-**Level 4: AI as your operating system.** You're working primarily through AI interfaces. Claude Code for development, agents for research, automated workflows for operations. You allocate tasks to AI the way a manager delegates to a team.
+**Level 1: Search replacement.** You use ChatGPT like a smarter Google. Summarize this. Explain that. Draft something. Useful, but barely scratching the surface. This is where most professionals are.
 
-Most companies are stuck at Level 1 trying to jump to Level 4. They blame the model. The model isn't the problem.
+**Level 2: Custom prompts with training wheels.** You've built a few GPTs or saved prompts for recurring tasks. But you're still babysitting — confirming every step, fixing every output. This is the "managing an intern" stage.
 
-## The Real Blocker: Can You Document It?
+**Level 3: Autonomous task execution.** The AI handles defined jobs without asking permission. Research, analysis, report generation — it runs, you review the output. Human-in-the-loop, but the loop is at the end, not every step.
+
+**Level 4: AI as operating system.** You work primarily through AI interfaces. Claude Code for development, agents for research, automated workflows for operations. You allocate tasks to AI the way a manager delegates to a team.
+
+Most companies have L1 people trying to jump to Level 4. They blame the model. The model isn't the problem.
+
+## Organization Readiness: The Infrastructure Side
+
+Even skilled AI users fail in organizations that aren't set up for agents. Your org infrastructure matters just as much as your people.
+
+The key questions:
+
+- **Can an agent find what it needs?** Or does critical knowledge live in people's heads?
+- **Are workflows explicit enough to follow?** Or does the agent not know when it's done?
+- **Can agents access your systems?** Or can they only read, not act?
+- **Is your data clean and current?** Or will agents hallucinate from stale context?
+- **Can agents verify their own work?** Or do they need approval on everything?
+
+When processes live in Slack threads and tribal knowledge, AI has nothing to learn from. It guesses. It hallucinates. It asks you to confirm every step because it has no ground truth to reference.
+
+## The Documentation Test
 
 Here's a question that predicts whether a task can be automated:
 
 **"Could you write instructions detailed enough for a stranger to do this job?"**
 
-If the answer is yes, an AI can probably do it. If the answer is "well, it depends" or "you kind of have to know..." — that's a human task, at least for now.
+If yes, an AI can probably do it. If the answer is "well, it depends" or "you kind of have to know..." — that's a human task, at least for now.
 
-The companies that get the most from AI have one thing in common: their processes are written down. Not because they planned for AI, but because documented businesses run better with or without automation.
-
-When processes live in people's heads, AI has nothing to learn from. It guesses. It hallucinates. It asks you to confirm every step because it has no ground truth to reference.
+The companies that get the most from AI share one trait: their processes are written down. Not because they planned for AI, but because documented businesses run better with or without automation.
 
 ## A 10-Minute Exercise
 
-Try this: List your 10 most repetitive tasks this week. Now mark which ones you'd confidently hand to a smart intern on their first day, with nothing but written instructions.
+List your ten most repetitive tasks this week. Mark which ones you'd confidently hand to a smart intern on day one, using nothing but written instructions.
 
 Those marked tasks? That's your automation surface area.
 
-For each one, write out the delegation instructions as if you were training that intern. Be specific:
+For each one, write the delegation instructions as if training that intern:
 - What inputs does this task need?
 - What does "done" look like?
 - What should they do if something's unclear?
 - How would you check their work?
 
-Congratulations — you just wrote your first agent prompts.
-
-## Where to Start (Hint: Not Where You'd Expect)
-
-The instinct is to automate your most valuable work first. The CFO's analysis. The founder's inbox. The sales team's outreach.
-
-This is usually wrong.
-
-A hedge fund we studied didn't start with their investors. They automated their back office — compliance paperwork, recruiting coordination, operations reporting. Why? Those bottlenecks were slowing everything else down. Unblocking admin work let the front office do more of what they were good at.
-
-Look for the constraint, not the crown jewel. Where does work pile up? What causes delays? What tasks do your best people hate doing but can't escape?
-
-That's your starting point.
+You just wrote your first agent prompts.
 
 ## The Compound Effect
 
-What happens when you document a process to automate it? You've also:
+When you document a process to automate it, you've also:
 - Created training material for new hires
 - Built an audit trail for quality control
 - Identified inefficiencies you couldn't see before
@@ -80,4 +101,12 @@ Before you upgrade your AI subscription, ask: **Is your business ready for the A
 
 ---
 
-*Dave Graham is the founder of LFG Consulting, helping small businesses become AI-ready. He spent 21 years in Air Force Special Operations before transitioning to technology consulting.*
+## Find Out Where You Stand
+
+We offer a half-day Agent Readiness Assessment that scores both sides of the equation — your people and your organization. You'll walk away with:
+
+- A clear picture of where you're blocked
+- Prioritized roadmap for getting unstuck
+- Quick wins you can implement immediately
+
+[Book a Readiness Assessment →](/contact)
