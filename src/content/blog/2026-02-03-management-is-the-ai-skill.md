@@ -63,7 +63,7 @@ This is where subject matter expertise becomes non-negotiable. The expert knows 
 
 The companies getting the most from AI aren't the ones with the best tools or the biggest budgets. They're the ones with:
 
-1. **Clear processes** — documented well enough that delegation is possible
+1. **Clear processes** — documented well enough that delegation is possible. As [Mitchell Hashimoto put it](https://mitchellh.com/writing/my-ai-adoption-journey): the bottleneck is "improving my own workflows and tools so that I can have a constant stream of high quality work to delegate. Which, even without AI, is important!"
 2. **Subject matter experts** — people who can evaluate AI output in their domain
 3. **Management culture** — experience setting goals, giving feedback, and iterating
 
