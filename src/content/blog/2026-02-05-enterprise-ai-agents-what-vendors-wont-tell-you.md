@@ -11,11 +11,11 @@ author:
   title: "Principal Consultant"
 ---
 
-OpenAI launched Frontier this morning. Anthropic dropped Opus 4.6 with a 1M token context window. OpenAI followed up with GPT-5.3-Codex. Salesforce has Agentforce. Microsoft has Copilot Agents.
+OpenAI launched Frontier Friday morning. Anthropic dropped Opus 4.6 with a 1M token context window. OpenAI followed up with GPT-5.3-Codex. Salesforce has Agentforce. Microsoft has Copilot Agents.
 
 All in the same week.
 
-Every vendor is promising "AI coworkers" that plug into your CRM, HR systems, and databases, automating workflows while you sleep.
+Every vendor is promising "AI coworkers" that plug into your CRM, HR systems, and databases, or replacing your systems wholesale, automating workflows while you sleep.
 
 What none of them are talking about:
 
