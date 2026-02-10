@@ -69,9 +69,15 @@ A good manager with a genie outperforms a hundred people working alone. You can 
 
 The leverage is real. The capability is real. But the relationship is also real: you're always the one rubbing the lamp. The genie never shows up and says "hey, I was thinking about your problem and I have an idea."
 
-Maybe that changes. Maybe future AI develops something like initiative. But for now, the most productive framing is: you have an incredibly powerful tool that does exactly what you ask, nothing more, and nothing less.
+Maybe that changes. Maybe future AI develops something like initiative. But here's the thing that doesn't change even if it does: **you're still responsible for what it does.**
 
-Learn to make good wishes.
+Suppose the genie becomes sentient tomorrow. Genuine general intelligence, goals, curiosity, the whole package. You still let it out of the bottle. You still pointed it at your systems. You still defined (or failed to define) the boundaries of what it could do. A brilliant subordinate is still your subordinate. A four-star general who delegates to a genius colonel doesn't get to blame the colonel when it goes sideways — the general chose to delegate, set the scope, and owns the outcome.
+
+The AGI debate is interesting. But it's a distraction from the accountability question, because the accountability question has the same answer regardless: the human who deployed the agent, set its authorities, and turned it loose on production data owns what happens next. That's true whether the agent is a statistical pattern-matcher or a conscious being.
+
+Capability changes. Responsibility doesn't.
+
+Learn to make good wishes. And own what the genie does with them.
 
 ---
 
