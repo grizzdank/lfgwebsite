@@ -60,13 +60,27 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Copyright */}
+        {/* Copyright + Certifications */}
         <div className="mt-12 pt-8 border-t border-[#446b5d]">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#e8eeeb] text-sm">
               © {new Date().getFullYear()} LFG Consulting. All rights reserved.
             </p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logos/vosb-certified.png"
+                alt="SBA Certified Veteran Owned Small Business"
+                style={{ height: '64px', width: 'auto' }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/logos/sdvosb-certified.png"
+                alt="SBA Certified Service-Disabled Veteran Owned Small Business"
+                style={{ height: '64px', width: 'auto' }}
+              />
+            </div>
+            <div className="flex space-x-6">
               <a
                 href="https://linkedin.com/company/let-s-find-growth/"
                 target="_blank"
