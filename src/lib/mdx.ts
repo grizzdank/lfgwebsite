@@ -1,20 +1,34 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
 import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeSanitize, { defaultSchema } from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
 import { BlogPost } from "@/types/blog";
 
 const postsDirectory = path.join(process.cwd(), "src/content/blog");
+
+const sanitizeSchema = {
+  ...defaultSchema,
+  attributes: {
+    ...defaultSchema.attributes,
+    code: [...(defaultSchema.attributes?.code || []), "className"],
+  },
+};
 
 /**
  * Convert markdown content to HTML
  */
 async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark()
-    .use(remarkGfm) // GitHub Flavored Markdown support
-    .use(html, { sanitize: false })
+  const result = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype, { allowDangerousHtml: false })
+    .use(rehypeSanitize, sanitizeSchema)
+    .use(rehypeStringify)
     .process(markdown);
   return result.toString();
 }

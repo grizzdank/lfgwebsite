@@ -4,6 +4,8 @@ import { siteMetadata } from "@/config/metadata";
 import { getPostBySlug, getAllPostSlugs, getAllPosts } from "@/lib/mdx";
 import BlogPostClientContent from "@/components/page/BlogPostClientContent";
 
+export const dynamicParams = false;
+
 // Generate static params for all blog posts
 export async function generateStaticParams() {
   const slugs = getAllPostSlugs();
