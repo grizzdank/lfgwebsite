@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
             "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://app.cal.com https://cal.com",
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
             "font-src 'self' https://fonts.gstatic.com",
-            "img-src 'self' data: https://www.pearlywrites.com https://www.google-analytics.com",
+            "img-src 'self' data: https://www.pearlywrites.com https://www.google-analytics.com https://www.googletagmanager.com",
             "connect-src 'self' https://www.google-analytics.com https://formspree.io https://vitals.vercel-insights.com",
             "frame-src 'self' https://app.cal.com https://cal.com",
             "frame-ancestors 'none'",
