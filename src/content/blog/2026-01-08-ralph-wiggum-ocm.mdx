@@ -19,7 +19,7 @@ while :; do cat PROMPT.md | claude-code ; done
 
 Same prompt, fed repeatedly. The agent sees its own previous work in the files, iterates, improves, ships.
 
-Geoffrey Huntley announced this [technique](https://ghuntley.com/ralph/) in summer 2025 as a simple bash while loop. By the end of 2025, it went viral. Now it's an [official plugin in Claude Code's marketplace](https://github.com/anthropics/claude-code/tree/main/plugins/ralph-wiggum) that adds structured completion detection:
+Geoffrey Huntley announced this [technique](https://ghuntley.com/ralph/) in summer 2025 as a simple bash while loop. By the end of 2025, it went viral. Now it's an [official plugin in Claude Code's marketplace](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/ralph-loop) that adds structured completion detection:
 
 ```bash
 /ralph-loop "Build a REST API with CRUD operations and tests. 
